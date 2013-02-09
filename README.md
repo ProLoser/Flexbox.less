@@ -6,9 +6,25 @@ CSS Flexbox mixins for LESS that adds back-compatibility for the 2009 syntax
 All mixins use the **latest flexbox syntax** and merely add additional properties in the original syntax for you, 
 as well as browser prefixes.
 
-[Mozilla Documentation on Flexbox](https://developer.mozilla.org/en-US/docs/CSS/Using_CSS_flexible_boxes)
+## Why?
 
-[A fun demo in 2009 syntax](http://flexiejs.com/playground/) (try setting box-flex to 1)
+**Combining 2009 and Edge syntaxes will give you the greatest browser support coverage!**
+
+> The old 2009 syntax has surprisingly good browser "support": Chrome, Firefox 2+, Safari 3.1+... Pretty much everything except IE 9- and Opera anything. I say "support" because the actual implementations were partial and differed a bit (hence the re-write).
+>
+> Despite more support, it's not smart to be using the older syntax. The old spec is gone with the wind. Browsers might drop support for the old syntax in the future. At the least, it's very likely the new syntax is easier to understand and will be implemented more deeply and more consistently. Browsers that don't yet support Flexbox will implement the new spec, which is in "CR" (Candidate Recommendation) status.
+>
+> New syntax support is: Chrome 21+, Opera (& Opera Mobile) 12.1+, and Blackberry 10+.
+>
+> \- [_Chris Coyier_](http://css-tricks.com/old-flexbox-and-new-flexbox/)
+
+## References
+
+* [CanIUse.com browser-coverage](http://caniuse.com/#feat=flexbox)
+* [Official Spec](http://www.w3.org/TR/css3-flexbox/)
+* [Mozilla Documentation on Flexbox](https://developer.mozilla.org/en-US/docs/CSS/Using_CSS_flexible_boxes)
+* [Paul Irish / HTML5 Rocks](http://www.html5rocks.com/en/tutorials/flexbox/quick/)
+* [Chris Coyier / Old vs New flexbox](http://css-tricks.com/old-flexbox-and-new-flexbox/)
 
 ## Examples
 
