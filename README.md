@@ -10,6 +10,10 @@ as well as browser prefixes.
 
 [A fun demo in 2009 syntax](http://flexiejs.com/playground/) (try setting box-flex to 1)
 
+## Examples
+
+Checkout the [examples files](EXAMPLES.md) if you want an idea of what sort of benefits you are getting.
+
 ## Contribute
 
 I will slowly be adding every flexbox property as I find a few spare minutes here and there. But if you are impatient
