@@ -12,8 +12,17 @@
   display: -o-flex;
   display: flex;
 }
-.flex() {
-
+.flex(@flex) {
+  -webkit-box: @flex;
+  -moz-box: @flex;
+  -ms-box: @flex;
+  -o-box: @flex;
+  box: @flex;
+  -webkit-flex: @flex;
+  -moz-flex: @flex;
+  -ms-flex: @flex;
+  -o-flex: @flex;
+  flex: @flex;
 }
 .flex-direction(@direction) when (@direction = row) {
   box-orient: horizontal;
