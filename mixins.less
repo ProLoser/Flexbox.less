@@ -1,3 +1,4 @@
+// display: flex //
 .flexbox() {
   // 2009 spec
   display: -webkit-box;
@@ -12,18 +13,22 @@
   display: -o-flex;
   display: flex;
 }
+
+// flex //
 .flex(@flex) {
-  -webkit-box: @flex;
-  -moz-box: @flex;
-  -ms-box: @flex;
-  -o-box: @flex;
-  box: @flex;
+  -webkit-box-flex: @flex;
+  -moz-box-flex: @flex;
+  -ms-box-flex: @flex;
+  -o-box-flex: @flex;
+  box-flex: @flex;
   -webkit-flex: @flex;
   -moz-flex: @flex;
   -ms-flex: @flex;
   -o-flex: @flex;
   flex: @flex;
 }
+
+// flex-direction //
 .flex-direction(@direction) when (@direction = row) {
   box-orient: horizontal;
 }
@@ -52,4 +57,18 @@
   -ms-flex-direction: @direction;
   -o-flex-direction: @direction;
   flex-direction: @direction;
+}
+
+// order //
+.order(@order) {
+  -webkit-box-ordinal-group: @order;
+  -moz-box-ordinal-group: @order;
+  -ms-box-ordinal-group: @order;
+  -o-box-ordinal-group: @order;
+  box-ordinal-group: @order;
+  -webkit-order: @order;
+  -moz-order: @order;
+  -ms-order: @order;
+  -o-order: @order;
+  order: @order;
 }
