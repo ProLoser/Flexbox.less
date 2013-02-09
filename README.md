@@ -55,3 +55,7 @@ manner. If you find problems, feel free to open an issue, just be sure to **prov
 * flex-shrink
 * flex-wrap
 * justify-content
+
+## License
+
+#### [WTFPL](http://www.wtfpl.net/about/)
