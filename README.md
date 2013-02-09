@@ -12,7 +12,7 @@ as well as browser prefixes.
 
 ## Examples
 
-Checkout the [examples files](EXAMPLES.md) if you want an idea of what sort of benefits you are getting.
+Checkout the [examples file](EXAMPLES.md) if you want an idea of what sort of benefits you are getting.
 
 ## Contribute
 
