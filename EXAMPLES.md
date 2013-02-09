@@ -3,9 +3,9 @@ Examples
 
 All mixins are named after the latest specification's syntax and take identical args (except `.flexbox()`).
 
-All browser prefixes (`-webkit-, -moz-, -ms-, -o-`) are always prepended.
+All prefixes (`-webkit-, -moz-, -ms-, -o-`) are prepended to every property.
 
-```css
+```sass
 .flexbox();
 // becomes:
 display: box;
