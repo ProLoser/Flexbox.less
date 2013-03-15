@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Flexbox.less : CSS Flexbox mixins for LESS that adds back-compatibility for the 2009 syntax" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Flexbox.less</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ProLoser/Flexbox.less">View on GitHub</a>
+
+          <h1 id="project_title">Flexbox.less</h1>
+          <h2 id="project_tagline">CSS Flexbox mixins for LESS that adds back-compatibility for the 2009 syntax</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ProLoser/Flexbox.less/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ProLoser/Flexbox.less/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Flexbox.less</h1>
+
+<p>CSS Flexbox mixins for LESS that adds back-compatibility for the 2009 syntax</p>
+
+<p>All mixins use the <strong>latest flexbox syntax</strong> and merely add additional properties in the original syntax for you, 
+as well as browser prefixes.</p>
+
+<h2>Why?</h2>
+
+<p><strong>Combining 2009 and Edge syntaxes will give you the greatest browser support coverage!</strong></p>
+
+<blockquote>
+<p>The old 2009 syntax has surprisingly good browser "support": Chrome, Firefox 2+, Safari 3.1+... Pretty much everything except IE 9- and Opera anything. I say "support" because the actual implementations were partial and differed a bit (hence the re-write).</p>
+
+<p>Despite more support, it's not smart to be using the older syntax. The old spec is gone with the wind. Browsers might drop support for the old syntax in the future. At the least, it's very likely the new syntax is easier to understand and will be implemented more deeply and more consistently. Browsers that don't yet support Flexbox will implement the new spec, which is in "CR" (Candidate Recommendation) status.</p>
+
+<p>New syntax support is: Chrome 21+, Opera (&amp; Opera Mobile) 12.1+, and Blackberry 10+.</p>
+
+<p>- <a href="http://css-tricks.com/old-flexbox-and-new-flexbox/"><em>Chris Coyier</em></a></p>
+</blockquote>
+
+<h2>References</h2>
+
+<ul>
+<li><a href="http://caniuse.com/#feat=flexbox">CanIUse.com browser-coverage</a></li>
+<li><a href="http://www.w3.org/TR/css3-flexbox/">Official Spec</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/CSS/Using_CSS_flexible_boxes">Mozilla Documentation on Flexbox</a></li>
+<li><a href="http://www.html5rocks.com/en/tutorials/flexbox/quick/">Paul Irish / HTML5 Rocks</a></li>
+<li><a href="http://css-tricks.com/old-flexbox-and-new-flexbox/">Chris Coyier / Old vs New flexbox</a></li>
+</ul><h2>Examples</h2>
+
+<p>Checkout the <a href="EXAMPLES.md">examples file</a> if you want an idea of what sort of benefits you are getting.</p>
+
+<h2>Contribute</h2>
+
+<p>I will slowly be adding every flexbox property as I find a few spare minutes here and there. But if you are impatient
+and want a specific property added, feel free to open a Pull Request. Please try to add backwards-compatibility
+properties for the 2009 syntax to add a much larger range of browser support.</p>
+
+<p>Values aren't always identical across syntaxes, in which case you can use <a href="https://github.com/ProLoser/Flexbox.less/blob/master/mixins.less#L31-L60">.flex-direction()</a>
+as an example of how to accomplish this.</p>
+
+<h2>Conflicts</h2>
+
+<p>At this time, I'm unaware of any problems that may arise from using both the old and new syntax side by side in this
+manner. If you find problems, feel free to open an issue, just be sure to <strong>provide the browser version number.</strong></p>
+
+<h2>TODO List</h2>
+
+<ul>
+<li>align-content</li>
+<li>align-items</li>
+<li>align-self</li>
+<li>flex-basis</li>
+<li>flex-flow</li>
+<li>flex-grow</li>
+<li>flex-shrink</li>
+<li>flex-wrap</li>
+<li>justify-content</li>
+</ul><h2>License</h2>
+
+<h4><a href="http://www.wtfpl.net/about/">WTFPL</a></h4>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Flexbox.less maintained by <a href="https://github.com/ProLoser">ProLoser</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
