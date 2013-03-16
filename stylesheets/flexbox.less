@@ -1,0 +1,89 @@
+// display: inline-flex //
+.inline-flexbox() {
+  // 2009 spec
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+  // new spec
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flex;
+  display: -o-inline-flex;
+  display: -inline-flex;
+}
+// display: flex //
+.flexbox() {
+  // 2009 spec
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+  // new spec
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
+// flex //
+.flex(@flex) {
+  -webkit-box-flex: @flex;
+  -moz-box-flex: @flex;
+  -ms-box-flex: @flex;
+  -o-box-flex: @flex;
+  box-flex: @flex;
+  -webkit-flex: @flex;
+  -moz-flex: @flex;
+  -ms-flex: @flex;
+  -o-flex: @flex;
+  flex: @flex;
+}
+
+// flex-direction //
+.flex-direction(@direction) when (@direction = row) {
+  box-orient: horizontal;
+}
+.flex-direction(@direction) when (@direction = row-reverse) {
+  box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -moz-box-direction: reverse;
+  -ms-box-direction: reverse;
+  -o-box-direction: reverse;
+  box-direction: reverse;
+}
+.flex-direction(@direction) when (@direction = column) {
+  box-orient: vertical;
+}
+.flex-direction(@direction) when (@direction = column-reverse) {
+  box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -moz-box-direction: reverse;
+  -ms-box-direction: reverse;
+  -o-box-direction: reverse;
+  box-direction: reverse;
+}
+.flex-direction(@direction) {
+  -webkit-flex-direction: @direction;
+  -moz-flex-direction: @direction;
+  -ms-flex-direction: @direction;
+  -o-flex-direction: @direction;
+  flex-direction: @direction;
+}
+
+// order //
+.order(@order) {
+  -webkit-box-ordinal-group: @order;
+  -moz-box-ordinal-group: @order;
+  -ms-box-ordinal-group: @order;
+  -o-box-ordinal-group: @order;
+  box-ordinal-group: @order;
+  -webkit-order: @order;
+  -moz-order: @order;
+  -ms-order: @order;
+  -o-order: @order;
+  order: @order;
+}
