@@ -6,6 +6,10 @@ CSS Flexbox mixins for LESS that adds back-compatibility for the 2009 syntax
 All mixins use the **latest flexbox syntax** and merely add additional properties in the original syntax for you, 
 as well as browser prefixes.
 
+## Demo
+
+Checkout this [demo page](http://proloser.github.com/Flexbox.less/demo.html) in different browsers.
+
 ## Why?
 
 **Combining 2009 and Edge syntaxes will give you the greatest browser support coverage!**
@@ -25,10 +29,6 @@ as well as browser prefixes.
 * [Mozilla Documentation on Flexbox](https://developer.mozilla.org/en-US/docs/CSS/Using_CSS_flexible_boxes)
 * [Paul Irish / HTML5 Rocks](http://www.html5rocks.com/en/tutorials/flexbox/quick/)
 * [Chris Coyier / Old vs New flexbox](http://css-tricks.com/old-flexbox-and-new-flexbox/)
-
-## Examples
-
-Checkout the [examples file](EXAMPLES.md) if you want an idea of what sort of benefits you are getting.
 
 ## Contribute
 
