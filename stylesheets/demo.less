@@ -1,0 +1,53 @@
+@import "../components/flexbox.less/flexbox.less";
+
+/*** CONTAINER ***/
+.flexbox {
+	.flexbox();
+
+	background: rgba(0,0,0,.3);
+	margin: 10px 0;
+
+	// corrects firefox
+	width: 100%;
+
+	/*** CONTAINER DIRECTIONS ***/
+	&.row {
+		.flex-direction(row);
+	}
+	&.row-reverse {
+		.flex-direction(row-reverse);
+	}
+	&.column {
+		.flex-direction(column);
+	}
+	&.column-reverse {
+		.flex-direction(column-reverse);
+	}
+
+	/*** CELLS ***/
+	.order0 {
+		.order(0);
+	}
+	.order1 {
+		.order(1);
+	}
+	.order2 {
+		.order(2);
+	}
+	.order3 {
+		.order(3);
+	}
+
+	.flex0 {
+		.flex(0);
+	}
+	.flex1 {
+		.flex(1);
+	}
+	.flex2 {
+		.flex(2);
+	}
+	.flex3 {
+		.flex(3);
+	}
+}

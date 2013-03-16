@@ -1,0 +1,3 @@
+[submodule "components/flexbox.less"]
+	path = components/flexbox.less
+	url = git@github.com:ProLoser/Flexbox.less.git

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ng-app>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Flexbox.less : CSS Flexbox mixins for LESS that adds back-compatibility for the 2009 syntax" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet/less" type="text/css" media="screen" href="stylesheets/demo.less">
+    <script type="text/javascript" src="components/less.js/dist/less-1.3.3.min.js"></script>
+    <script type="text/javascript" src="components/angular/angular.js"></script>
+    <title>Flexbox.less</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ProLoser/Flexbox.less">View on GitHub</a>
+
+          <h1 id="project_title">Flexbox.less</h1>
+          <h2 id="project_tagline">CSS Flexbox mixins for LESS that adds back-compatibility for the 2009 syntax</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ProLoser/Flexbox.less/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ProLoser/Flexbox.less/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner" ng-init="cells=[{},{},{}]">
+        <h1>Demo</h1>
+
+        <div ng-init="direction=''">
+        	<h3>Flexbox Direction:</h3>
+        	<label><input type="radio" ng-model="direction" value=""> none</label>
+        	<label><input type="radio" ng-model="direction" value="row"> row</label>
+        	<label><input type="radio" ng-model="direction" value="row-reverse"> row-reverse</label>
+        	<label><input type="radio" ng-model="direction" value="column"> column</label>
+        	<label><input type="radio" ng-model="direction" value="column-reverse"> column-reverse</label>
+        </div>
+
+        <h3>Styles:</h3>
+        <textarea ng-model="styles" ng-init="styles='.flexbox div { background: lightblue; margin: 10px; border: 1px solid; }'"></textarea>
+        <style ng-bind="styles"></style>
+
+        <button ng-click="cells.push({})">Add Cell</button>
+
+        <div class="flexbox" ng-class="direction">
+        	<div ng-repeat="cell in cells" ng-class="cell.order+' '+cell.flex">
+        		<button ng-click="cells.splice($index,1)">&times;</button>
+        		Cell #{{$index+1}}
+        		<hr>
+        		<label>Order (priority):</label>
+        		<select ng-model="cell.order">
+        			<option value="">NA</option>
+        			<option value="order0">0</option>
+        			<option value="order1">1</option>
+        			<option value="order2">2</option>
+        			<option value="order3">3</option>
+        		</select>
+        		<hr>
+        		<label>Flex (stretch):</label>
+        		<select ng-model="cell.flex">
+        			<option value="">NA</option>
+        			<option value="flex0">0</option>
+        			<option value="flex1">1</option>
+        			<option value="flex2">2</option>
+        			<option value="flex3">3</option>
+        		</select>
+        	</div>
+        </div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Flexbox.less maintained by <a href="https://github.com/ProLoser">ProLoser</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
