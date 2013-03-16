@@ -36,7 +36,7 @@ I will slowly be adding every flexbox property as I find a few spare minutes her
 and want a specific property added, feel free to open a Pull Request. Please try to add backwards-compatibility
 properties for the 2009 syntax to add a much larger range of browser support.
 
-Values aren't always identical across syntaxes, in which case you can use [.flex-direction()](https://github.com/ProLoser/Flexbox.less/blob/master/mixins.less#L31-L60)
+Values aren't always identical across syntaxes, in which case you can use [.flex-direction()](https://github.com/ProLoser/Flexbox.less/blob/master/flexbox.less#L31-L60)
 as an example of how to accomplish this.
 
 ## Conflicts
