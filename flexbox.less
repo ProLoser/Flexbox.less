@@ -21,6 +21,14 @@
   display: -ms-box;
   display: -o-box;
   display: box;
+
+  // tweener
+  display: -webkit-flexbox;
+  display: -moz-flexbox;
+  display: -ms-flexbox;
+  display: -o-flexbox;
+  display: flexbox;
+
   // new spec
   display: -webkit-flex;
   display: -moz-flex;
@@ -45,9 +53,17 @@
 
 // flex-direction //
 .flex-direction(@direction) when (@direction = row) {
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -ms-box-orient: horizontal;
+  -o-box-orient: horizontal;
   box-orient: horizontal;
 }
 .flex-direction(@direction) when (@direction = row-reverse) {
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -ms-box-orient: horizontal;
+  -o-box-orient: horizontal;
   box-orient: horizontal;
   -webkit-box-direction: reverse;
   -moz-box-direction: reverse;
@@ -56,9 +72,17 @@
   box-direction: reverse;
 }
 .flex-direction(@direction) when (@direction = column) {
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  -o-box-orient: vertical;
   box-orient: vertical;
 }
 .flex-direction(@direction) when (@direction = column-reverse) {
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  -o-box-orient: vertical;
   box-orient: vertical;
   -webkit-box-direction: reverse;
   -moz-box-direction: reverse;
