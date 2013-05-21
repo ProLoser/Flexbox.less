@@ -53,7 +53,6 @@ manner. If you find problems, feel free to open an issue, just be sure to **prov
 * flex-flow
 * flex-grow
 * flex-shrink
-* flex-wrap
 * justify-content
 
 ## License
