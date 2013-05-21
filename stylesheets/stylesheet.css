@@ -157,7 +157,7 @@ img {
   -o-box-shadow: 0 0 5px #ebebeb;
   -ms-box-shadow: 0 0 5px #ebebeb;
 }
-
+/*
 pre, code {
   width: 100%;
   color: #222;
@@ -191,7 +191,7 @@ pre code {
   display: block;
   box-shadow: none;
 }
-
+*/
 blockquote {
   color: #666;
   margin-bottom: 20px;

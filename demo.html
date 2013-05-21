@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="ui.codemirror">
 
   <head>
     <meta charset='utf-8' />
@@ -7,9 +7,13 @@
     <meta name="description" content="Flexbox.less : CSS Flexbox mixins for LESS that adds back-compatibility for the 2009 syntax" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="components/codemirror/lib/codemirror.css">
     <link rel="stylesheet/less" type="text/css" media="screen" href="stylesheets/demo.less">
     <script type="text/javascript" src="components/less.js/dist/less-1.3.3.min.js"></script>
     <script type="text/javascript" src="components/angular/angular.js"></script>
+    <script type="text/javascript" src="components/angular-ui-codemirror/ui-codemirror.js"></script>
+    <script type="text/javascript" src="components/codemirror/lib/codemirror.js"></script>
+    <script type="text/javascript" src="components/codemirror/mode/css/css.js"></script>
     <title>Flexbox.less</title>
   </head>
 
@@ -36,21 +40,29 @@
         <h1>Demo</h1>
 
         <div ng-init="direction=''">
-        	<h3>Flexbox Direction:</h3>
-        	<label><input type="radio" ng-model="direction" value=""> none</label>
-        	<label><input type="radio" ng-model="direction" value="row"> row</label>
-        	<label><input type="radio" ng-model="direction" value="row-reverse"> row-reverse</label>
-        	<label><input type="radio" ng-model="direction" value="column"> column</label>
-        	<label><input type="radio" ng-model="direction" value="column-reverse"> column-reverse</label>
+            <h3>Flexbox Direction:</h3>
+            <label><input type="radio" ng-model="direction" value=""> none</label>
+            <label><input type="radio" ng-model="direction" value="row"> row</label>
+            <label><input type="radio" ng-model="direction" value="row-reverse"> row-reverse</label>
+            <label><input type="radio" ng-model="direction" value="column"> column</label>
+            <label><input type="radio" ng-model="direction" value="column-reverse"> column-reverse</label>
         </div>
 
-        <h3>Styles:</h3>
-        <textarea ng-model="styles" ng-init="styles='.flexbox div { background: lightblue; margin: 10px; border: 1px solid; }'"></textarea>
-        <style ng-bind="styles"></style>
+        <div ng-init="wrap=''">
+        	<h3>Flexbox Wrap:</h3>
+        	<label><input type="radio" ng-model="wrap" value=""> none</label>
+        	<label><input type="radio" ng-model="wrap" value="wrap"> wrap</label>
+        	<label><input type="radio" ng-model="wrap" value="nowrap"> nowrap</label>
+        	<label><input type="radio" ng-model="wrap" value="wrap-reverse"> wrap-reverse</label>
+        </div>
+
+        <h3>Additional Custom Styles:</h3>
+        <style ng-bind="styles" ng-init="styles='.flexbox div { background: lightblue; margin: 10px; border: 1px solid; }'"></style>
+        <textarea ui-codemirror="{viewportMargin:'Infinity',lineWrapping:true,lineNumbers:true}" ng-model="styles"></textarea>
 
         <button ng-click="cells.push({})">Add Cell</button>
 
-        <div class="flexbox" ng-class="direction">
+        <div class="flexbox" ng-class="direction + ' ' + wrap">
         	<div ng-repeat="cell in cells" ng-class="cell.order+' '+cell.flex">
         		<button ng-click="cells.splice($index,1)">&times;</button>
         		Cell #{{$index+1}}

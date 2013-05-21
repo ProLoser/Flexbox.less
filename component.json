@@ -1,8 +1,0 @@
-{
-  "name": "Flexbox.less",
-  "version": "0.0.1",
-  "dependencies": {
-    "less.js": "~1.4.0-b1",
-    "angular": "~1.0.5"
-  }
-}

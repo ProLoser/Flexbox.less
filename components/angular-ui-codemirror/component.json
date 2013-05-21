@@ -1,0 +1,35 @@
+{
+  "name": "angular-ui-codemirror",
+  "version": "0.0.3",
+  "description": "This directive allows you to add CodeMirror to your textarea elements.",
+  "author": {
+    "name": "https://github.com/angular-ui/ui-codemirror/contributors"
+  },
+  "license": "MIT",
+  "homepage": "http://angular-ui.github.com",
+  "main": "./ui-codemirror.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "test*",
+    "demo*",
+    "gruntFile.js",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/angular-ui/ui-codemirror.git"
+  },
+  "dependencies": {
+    "angular": "~1.0.6",
+    "codemirror": "*"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.x"
+  },
+  "gitHead": "fe61adce4c7bef18f674b1998c0a1201cb0d7b15",
+  "readme": "# ui-codemirror directive [![Build Status](https://travis-ci.org/angular-ui/ui-codemirror.png)](https://travis-ci.org/angular-ui/ui-codemirror)\n\nThis directive allows you to add [CodeMirror](http://codemirror.net/) to your textarea elements.\n\n# Requirements\n\n- AngularJS\n- [CodeMirror 3.x](https://github.com/marijnh/CodeMirror)\n\n# Testing\n\nWe use karma (the new testacular) and jshint to ensure the quality of the code.  The easiest way to run these checks is to use grunt:\n\n```sh\nnpm install -g grunt-cli\nnpm install\nbower install\ngrunt\n```\n\nThe karma task will try to open Firefox as a browser in which to run the tests.  Make sure this is available or change the configuration in `test\\karma.conf.js`\n\n# Usage\n\nWe use [bower](http://twitter.github.com/bower/) for dependency management.  Add\n\n```json\ndependencies: {\n\"angular-ui-codemirror\": \"latest\"\n}\n```\n\nTo your `components.json` file. Then run\n\n```sh\nbower install\n```\n\nThis will copy the ui-codemirror files into your `components` folder, along with its dependencies. Load the script files in your application:\n\n```html\n<script type=\"text/javascript\" src=\"components/codemirror/lib/codemirror.js\"></script>\n<script type=\"text/javascript\" src=\"components/angular/angular.js\"></script>\n<script type=\"text/javascript\" src=\"components/angular-ui-codemirror/ui-codemirror.js\"></script>\n```\n\nAdd the CodeMirror module as a dependency to your application module:\n\n```javascript\nvar myAppModule = angular.module('MyApp', ['ui.codemirror']);\n```\n\nApply the directive to your form elements:\n\n```html\n<textarea ui-codemirror ng-model=\"x\"></textarea>\n```\n\n## Options\n\nAll the [Codemirror configuration options](http://codemirror.net/doc/manual.html#config) can be passed through the directive.\n\n```javascript\nmyAppModule.controller('MyController', [ '$scope', function($scope) {\n\t$scope.editorOptions = {\n\t\tlineWrapping : true,\n\t\tlineNumbers: true,\n\t\treadOnly: 'nocursor',\n\t\tmode: 'xml',\n\t};\n}]);\n```\n\n```html\n<textarea ui-codemirror=\"editorOptions\" ng-model=\"x\"></textarea>\n```\n\n## Working with ng-model\n\nThe ui-codemirror directive plays nicely with ng-model.\n\nThe ng-model will be watched for to set the CodeMirror document value (by [setValue](http://codemirror.net/doc/manual.html#setValue)).\n\n_The ui-codemirror directive stores and expects the model value to be a standard javascript String._\n\n## ui-codemirror events\nThe [CodeMirror events](http://codemirror.net/doc/manual.html#events) are supported has configuration options.\nThey keep the same name but are prefixed by _on_..\n_This directive expects the events to be javascript Functions._\nFor example to handle changes of in the editor, we use _onChange_\n\n```html\n<textarea ui-codemirror=\"{\n            lineWrapping : true,\n            lineNumbers: true,\n            mode: 'javascript',\n            onChange: reParseInput\n        }\" ng-model=\"x\"></textarea>\n```\n\nNow you can set the _reParseInput_ function in the controller.\n\n```javascript\n$scope.reParseInput = function(){\n\t$scope.errorMsg = \"\";\n\t$timeout.cancel(pending);\n\tpending = $timeout($scope.workHere, 500);\n};\n```\n\n## ui-refresh directive\n\nIf you apply the refresh directive to element then any change to do this scope value will result to a [refresh of the CodeMirror instance](http://codemirror.net/doc/manual.html#refresh).\n\n_The ui-refresh directive expects a scope variable that can be any thing...._\n\n```html\n<textarea ui-codemirror ng-model=\"x\" ui-refresh='isSomething'></textarea>\n```\n\nNow you can set the _isSomething_ in the controller scope.\n\n```javascript\n$scope.isSomething = true;\t\n```\n\nNote: the comparison operator between the old and the new value is \"!==\"\n",
+  "readmeFilename": "README.md",
+  "_id": "angular-ui-codemirror@0.0.3"
+}
