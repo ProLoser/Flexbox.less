@@ -111,3 +111,59 @@
   -o-order: @order;
   order: @order;
 }
+
+// flex-wrap //
+
+// 2009 property is box-lines
+// single == nowrap
+// multiple == wrap
+// no equivalent to wrap-reverse
+// initial = single
+
+.flex-wrap(@wrap-method) when (@wrap-method = wrap) {
+  -webkit-lines: multiple;
+  webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -ms-box-lines: multiple;
+  -o-box-lines: multiple;
+  box-lines: multiple;
+}
+
+//box lines doesn't have wrap reverse, so use box-direction
+.flex-wrap(@wrap-method) when (@wrap-method = wrap-reverse) {
+  -webkit-lines: multiple;
+  webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -ms-box-lines: multiple;
+  -o-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-box-direction: reverse;
+  -moz-box-direction: reverse;
+  -ms-box-direction: reverse;
+  -o-box-direction: reverse;
+  box-direction: reverse;
+}
+
+.flex-wrap(@wrap-method) when (@wrap-method = nowrap) {
+  -webkit-lines: single;
+  webkit-box-lines: single;
+  -moz-box-lines: single;
+  -ms-box-lines: single;
+  -o-box-lines: single;
+  box-lines: single;
+}
+
+// 2011 spec is flex-wrap instead of box-lines
+// nowrap = single line LTR
+// wrap = multiple lines LTR
+// wrap-reverse = multiple lines, reversed children LTR
+// initial = nowrap
+// not inherited by default; spec inherit to force it
+
+.flex-wrap(@wrap-method) {
+  -webkit-flex-wrap: @wrap-method;
+  -moz-flex-wrap: @wrap-method;
+  -ms-flex-wrap: @wrap-method;
+  -o-flex-wrap: @wrap-method;
+  flex-wrap: @wrap-method;
+}
