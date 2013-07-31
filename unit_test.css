@@ -1,0 +1,96 @@
+.ut_align-content_start {
+  -ms-flex-line-pack: start;
+  -webkit-align-content: flex-start;
+  -moz-align-content: flex-start;
+  -o-align-content: flex-start;
+  align-content: flex-start;
+}
+.ut_align-content_end {
+  -ms-flex-line-pack: end;
+  -webkit-align-content: flex-end;
+  -moz-align-content: flex-end;
+  -o-align-content: flex-end;
+  align-content: flex-end;
+}
+.ut_align-content_center {
+  -ms-flex-line-pack: center;
+  -webkit-align-content: center;
+  -moz-align-content: center;
+  -o-align-content: center;
+  align-content: center;
+}
+.ut_align-content_space-between {
+  -ms-flex-line-pack: justify;
+  -webkit-align-content: space-between;
+  -moz-align-content: space-between;
+  -o-align-content: space-between;
+  align-content: space-between;
+}
+.ut_align-content_space-around {
+  -ms-flex-line-pack: distribute;
+  -webkit-align-content: space-around;
+  -moz-align-content: space-around;
+  -o-align-content: space-around;
+  align-content: space-around;
+}
+.ut_align-content_stretch {
+  -ms-flex-line-pack: stretch;
+  -webkit-align-content: stretch;
+  -moz-align-content: stretch;
+  -o-align-content: stretch;
+  align-content: stretch;
+}
+.ut_align-self_auto {
+  -ms-flex-item-align: auto;
+  flex-item-align: auto;
+  -webkit-align-self: auto;
+  -moz-align-self: auto;
+  -ms-align-self: auto;
+  -o-align-self: auto;
+  align-self: auto;
+}
+.ut_align-self_start {
+  -ms-flex-item-align: start;
+  flex-item-align: start;
+  -webkit-align-self: flex-start;
+  -moz-align-self: flex-start;
+  -ms-align-self: flex-start;
+  -o-align-self: flex-start;
+  align-self: flex-start;
+}
+.ut_align-self_end {
+  -ms-flex-item-align: end;
+  flex-item-align: end;
+  -webkit-align-self: flex-end;
+  -moz-align-self: flex-end;
+  -ms-align-self: flex-end;
+  -o-align-self: flex-end;
+  align-self: flex-end;
+}
+.ut_align-self_center {
+  -ms-flex-item-align: center;
+  flex-item-align: center;
+  -webkit-align-self: center;
+  -moz-align-self: center;
+  -ms-align-self: center;
+  -o-align-self: center;
+  align-self: center;
+}
+.ut_align-self_baseline {
+  -ms-flex-item-align: baseline;
+  flex-item-align: baseline;
+  -webkit-align-self: baseline;
+  -moz-align-self: baseline;
+  -ms-align-self: baseline;
+  -o-align-self: baseline;
+  align-self: baseline;
+}
+.ut_align-self_stretch {
+  -ms-flex-item-align: stretch;
+  flex-item-align: stretch;
+  -webkit-align-self: stretch;
+  -moz-align-self: stretch;
+  -ms-align-self: stretch;
+  -o-align-self: stretch;
+  align-self: stretch;
+}

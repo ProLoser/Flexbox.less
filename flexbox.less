@@ -178,9 +178,6 @@
 // stretch = stretch
 
 .align-items(@align-method) when (@align-method = start) {
-  -webkit-box-align: @align-method;
-  -moz-box-align: @align-method;
-  -ms-flex-align: @align-method;
   -webkit-align-items: flex-start;
   -moz-align-items: flex-start;
   -ms-align-items: flex-start;
@@ -189,9 +186,6 @@
 }
 
 .align-items(@align-method) when (@align-method = end) {
-  -webkit-box-align: @align-method;
-  -moz-box-align: @align-method;
-  -ms-flex-align: @align-method;
   -webkit-align-items: flex-end;
   -moz-align-items: flex-end;
   -ms-align-items: flex-end;
@@ -200,7 +194,10 @@
 }
 
 // for center, baseline, and stretch, which are the same in both specs
-.align-items(@align-method) {
+.align-items(@align-method) when 
+                                  (@align-method = center), 
+                                  (@align-method = baseline),
+                                  (@align-method = stretch) {
   -webkit-box-align: @align-method;
   -moz-box-align: @align-method;
   -ms-flex-align: @align-method;
@@ -244,7 +241,11 @@
 }
 
 // for auto, center, baseline, and stretch, which are the same in both specs
-.align-self(@align-method) {
+.align-self(@align-method) when 
+                                (@align-method = auto), 
+                                (@align-method = center), 
+                                (@align-method = baseline), 
+                                (@align-method = stretch) {
   -ms-flex-item-align: @align-method;
   flex-item-align: @align-method;
   -webkit-align-self: @align-method;
@@ -252,4 +253,58 @@
   -ms-align-self: @align-method;
   -o-align-self: @align-method;
   align-self: @align-method;
+}
+
+// Align Content //
+// align content deals with distributing flex items within a container, on the cross axis, where more than one 
+// line of flex items
+
+// microsoft property is flex-line-pack
+// flex-end == end
+// flex-start == start
+// space-between == justify
+// space-around == distribute
+// center == center
+// stretch == stretch
+
+.align-content(@align-method) when (@align-method = start) {
+  -ms-flex-line-pack: @align-method;
+  -webkit-align-content: flex-start;
+  -moz-align-content: flex-start;
+  -o-align-content: flex-start;
+  align-content: flex-start;
+}
+
+.align-content(@align-method) when (@align-method = end) {
+  -ms-flex-line-pack: @align-method;
+  -webkit-align-content: flex-end;
+  -moz-align-content: flex-end;
+  -o-align-content: flex-end;
+  align-content: flex-end;
+}
+
+.align-content(@align-method) when (@align-method = space-between) {
+  -ms-flex-line-pack: justify;
+  -webkit-align-content: space-between;
+  -moz-align-content: space-between;
+  -o-align-content: space-between;
+  align-content: space-between;
+}
+
+.align-content(@align-method) when (@align-method = space-around) {
+  -ms-flex-line-pack: distribute;
+  -webkit-align-content: space-around;
+  -moz-align-content: space-around;
+  -o-align-content: space-around;
+  align-content: space-around;
+}
+
+.align-content(@align-method) when 
+                                  (@align-method = center), 
+                                  (@align-method = stretch) {
+  -ms-flex-line-pack: @align-method;
+  -webkit-align-content: @align-method;
+  -moz-align-content: @align-method;
+  -o-align-content: @align-method;
+  align-content: @align-method;
 }
