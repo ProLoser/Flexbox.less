@@ -167,3 +167,89 @@
   -o-flex-wrap: @wrap-method;
   flex-wrap: @wrap-method;
 }
+
+// align-items //
+
+// 2009 property is box-align
+// start == flex-start
+// end == flex-end
+// center == center
+// baseline == baseline
+// stretch = stretch
+
+.align-items(@align-method) when (@align-method = start) {
+  -webkit-box-align: @align-method;
+  -moz-box-align: @align-method;
+  -ms-flex-align: @align-method;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -ms-align-items: flex-start;
+  -o-align-items: flex-start;
+  align-items: flex-start;
+}
+
+.align-items(@align-method) when (@align-method = end) {
+  -webkit-box-align: @align-method;
+  -moz-box-align: @align-method;
+  -ms-flex-align: @align-method;
+  -webkit-align-items: flex-end;
+  -moz-align-items: flex-end;
+  -ms-align-items: flex-end;
+  -o-align-items: flex-end;
+  align-items: flex-end;
+}
+
+// for center, baseline, and stretch, which are the same in both specs
+.align-items(@align-method) {
+  -webkit-box-align: @align-method;
+  -moz-box-align: @align-method;
+  -ms-flex-align: @align-method;
+  -webkit-align-items: @align-method;
+  -moz-align-items: @align-method;
+  -ms-align-items: @align-method;
+  -o-align-items: @align-method;
+  align-items: @align-method;
+}
+
+// align-self //
+
+// 2009 property is flex-item-align
+// auto == auto
+// start == flex-start
+// end == flex-end
+// center == center
+// baseline == baseline
+// stretch = stretch
+// note: not sure about syntax/support of flex-item-align in 2009 syntax except -ms
+// can't find any references to moz, webkit, or opera
+
+.align-self(@align-method) when (@align-method = start) {
+  -ms-flex-item-align: @align-method;
+  flex-item-align: @align-method;
+  -webkit-align-self: flex-start;
+  -moz-align-self: flex-start;
+  -ms-align-self: flex-start;
+  -o-align-self: flex-start;
+  align-self: flex-start;
+}
+
+.align-self(@align-method) when (@align-method = end) {
+  -ms-flex-item-align: @align-method;
+  flex-item-align: @align-method;
+  -webkit-align-self: flex-end;
+  -moz-align-self: flex-end;
+  -ms-align-self: flex-end;
+  -o-align-self: flex-end;
+  align-self: flex-end;
+}
+
+// for auto, center, baseline, and stretch, which are the same in both specs
+.align-self(@align-method) {
+  -ms-flex-item-align: @align-method;
+  flex-item-align: @align-method;
+  -webkit-align-self: @align-method;
+  -moz-align-self: @align-method;
+  -ms-align-self: @align-method;
+  -o-align-self: @align-method;
+  align-self: @align-method;
+}
