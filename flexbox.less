@@ -167,3 +167,135 @@
   -o-flex-wrap: @wrap-method;
   flex-wrap: @wrap-method;
 }
+
+// justify content: property;
+// flex-start
+// flex-end
+// center
+// space-between
+// space-around: NOT AVAILABLE FOR OLD SYNTAX (safari, firefox, old chrome)
+
+.justify-content(@justify-method) when (@justify-method = flex-start) {
+  -webkit-justify-content: start;
+  -moz-box-pack: start;
+  -ms-flex-pack: start;
+}
+
+.justify-content(@justify-method) when (@justify-method = flex-end) {
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -ms-flex-pack: end;
+}
+
+.justify-content(@justify-method) when (@justify-method = space-between) {
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+}
+
+.justify-content(@justify-method) {
+  -webkit-box-pack: @justify-method;
+  -moz-box-pack: @justify-method;
+  -ms-flex-pack: @justify-method;
+
+  -webkit-justify-content: @justify-method;
+  -moz-justify-content: @justify-method;
+  -ms-justify-content: @justify-method;
+  -o-justify-content: @justify-method;
+  justify-content: @justify-method;
+}
+
+// align-items: property;
+// flex-start
+// flex-end
+// center
+// baseline
+// stretch
+
+.align-items(@align-method) when (@align-method = flex-start) {
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+}
+
+.align-items(@align-method) when (@align-method = flex-end) {
+  -webkit-box-align: end;
+  -moz-box-align: end;
+  -ms-flex-align: end;
+}
+
+.align-items(@align-method) {
+  -webkit-box-align: @align-method;
+  -moz-box-align: @align-method;
+  -ms-flex-align: @align-method;
+  
+  -webkit-align-items: @align-method;
+  -moz-align-items: @align-method;
+  -ms-align-items: @align-method;
+  -o-align-items: @align-method;
+  align-items: @align-method;
+}
+
+// align-self: property;
+// auto
+// flex-start
+// flex-end
+// center
+// baseline
+// stretch
+// NOT AVAILABLE FOR OLD SYNTAX (safari, firefox, old chrome)
+
+.align-self(@align-method) when (@align-method = flex-start) {
+  -ms-flex-item-align: start;
+}
+
+.align-self(@align-method) when (@align-method = flex-end) {
+  -ms-flex-item-align: end;
+}
+
+.align-self(@align-method) {
+  -webkit-box-align: @align-method;
+  -moz-box-align: @align-method;
+  -ms-flex-item-align: @align-method;
+  
+  -webkit-align-self: @align-method;
+  -moz-align-self: @align-method;
+  -ms-align-self: @align-method;
+  -o-align-self: @align-method;
+  align-self: @align-method;
+}
+
+// align-content: property;
+// flex-start
+// flex-end
+// center
+// space-between
+// space-around
+// stretch
+// NOT AVAILABLE FOR OLD SYNTAX (safari, firefox, old chrome)
+
+.align-content(@align-method) when (@align-method = flex-start) {
+  -ms-flex-line-pack: start;
+}
+
+.align-content(@align-method) when (@align-method = flex-end) {
+  -ms-flex-line-pack: end;
+}
+
+.align-content(@align-method) when (@align-method = space-between) {
+  -ms-flex-line-pack: justify;
+}
+
+.align-content(@align-method) when (@align-method = space-around) {
+  -ms-flex-line-pack: distribute;
+}
+
+.align-content(@align-method) {
+  -ms-flex-line-pack: @align-method;
+  
+  -webkit-align-content: @align-method;
+  -moz-align-content: @align-method;
+  -ms-align-content: @align-method;
+  -o-align-content: @align-method;
+  align-content: @align-method;
+}
