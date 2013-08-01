@@ -129,3 +129,10 @@
   -o-flex: 1 1 100px;
   flex: 1 1 100px;
 }
+.ut_flex_tweener_1_1_auto {
+  -webkit-flex: 1 1 100px;
+  -moz-flex: 1 1 100px;
+  -ms-flex: 1 1 100px;
+  -o-flex: 1 1 100px;
+  flex: 1 1 100px;
+}

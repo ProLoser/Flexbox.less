@@ -50,10 +50,10 @@ manner. If you find problems, feel free to open an issue, just be sure to **prov
 * align-content (pending)
 * align-items (pending)
 * align-self (pending)
-* flex-basis 
+* flex-basis (pending)
 * flex-flow
-* flex-grow
-* flex-shrink
+* flex-grow (pending)
+* flex-shrink (pending)
 * justify-content (pending)
 
 ## License
