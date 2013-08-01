@@ -266,7 +266,7 @@
 // baseline == baseline
 // stretch = stretch
 
-.align-items(@align-method) when (@align-method = start) {
+.align-items(@align-item-method) when (@align-item-method = start) {
 // 2009 spec
   -webkit-box-align: start;
   -moz-box-align: start;
@@ -283,7 +283,7 @@
   align-items: flex-start;
 }
 
-.align-items(@align-method) when (@align-method = end) {
+.align-items(@align-item-method) when (@align-item-method = end) {
   // 2009 spec
     -webkit-box-align: end;
     -moz-box-align: end;
@@ -301,24 +301,24 @@
 }
 
 // for center, baseline, and stretch, which are the same in all specs
-.align-items(@align-method) when 
-                                  (@align-method = center), 
-                                  (@align-method = baseline),
-                                  (@align-method = stretch) {
+.align-items(@align-item-method) when 
+                                  (@align-item-method = center), 
+                                  (@align-item-method = baseline),
+                                  (@align-item-method = stretch) {
 // 2009 spec
-  -webkit-box-align: @align-method;
-  -moz-box-align: @align-method;
-  -ms-box-align: @align-method;
-  -o-box-align: @align-method;
-  box-align: @align-method;
+  -webkit-box-align: @align-item-method;
+  -moz-box-align: @align-item-method;
+  -ms-box-align: @align-item-method;
+  -o-box-align: @align-item-method;
+  box-align: @align-item-method;
 // tweener -ms- spec
-  -ms-flex-align: @align-method;
+  -ms-flex-align: @align-item-method;
 // 2013 spec
-  -webkit-align-items: @align-method;
-  -moz-align-items: @align-method;
-  -ms-align-items: @align-method;
-  -o-align-items: @align-method;
-  align-items: @align-method;
+  -webkit-align-items: @align-item-method;
+  -moz-align-items: @align-item-method;
+  -ms-align-items: @align-item-method;
+  -o-align-items: @align-item-method;
+  align-items: @align-item-method;
 }
 
 // align-self //
@@ -337,10 +337,10 @@
 // baseline == baseline
 // stretch = stretch
 
-.align-self(@align-method) when (@align-method = start) {
+.align-self(@align-self-method) when (@align-self-method = start) {
 // 2009 spec
-  -ms-flex-item-align: @align-method;
-  flex-item-align: @align-method;
+  -ms-flex-item-align: @align-self-method;
+  flex-item-align: @align-self-method;
 // 2013 spec
   -webkit-align-self: flex-start;
   -moz-align-self: flex-start;
@@ -349,10 +349,10 @@
   align-self: flex-start;
 }
 
-.align-self(@align-method) when (@align-method = end) {
+.align-self(@align-self-method) when (@align-self-method = end) {
 // 2009 spec
-  -ms-flex-item-align: @align-method;
-  flex-item-align: @align-method;
+  -ms-flex-item-align: @align-self-method;
+  flex-item-align: @align-self-method;
 // 2013 spec
   -webkit-align-self: flex-end;
   -moz-align-self: flex-end;
@@ -362,20 +362,20 @@
 }
 
 // for auto, center, baseline, and stretch, which are the same in both specs
-.align-self(@align-method) when 
-                                (@align-method = auto), 
-                                (@align-method = center), 
-                                (@align-method = baseline), 
-                                (@align-method = stretch) {
+.align-self(@align-self-method) when 
+                                (@align-self-method = auto), 
+                                (@align-self-method = center), 
+                                (@align-self-method = baseline), 
+                                (@align-self-method = stretch) {
 // 2009 spec
-  -ms-flex-item-align: @align-method;
-  flex-item-align: @align-method;
+  -ms-flex-item-align: @align-self-method;
+  flex-item-align: @align-self-method;
 // 2013 spec
-  -webkit-align-self: @align-method;
-  -moz-align-self: @align-method;
-  -ms-align-self: @align-method;
-  -o-align-self: @align-method;
-  align-self: @align-method;
+  -webkit-align-self: @align-self-method;
+  -moz-align-self: @align-self-method;
+  -ms-align-self: @align-self-method;
+  -o-align-self: @align-self-method;
+  align-self: @align-self-method;
 }
 
 // Align Content //
@@ -394,9 +394,9 @@
 // center == center
 // stretch == stretch
 
-.align-content(@align-method) when (@align-method = start) {
+.align-content(@align-content-method) when (@align-content-method = start) {
 // tweener -ms- spec
-  -ms-flex-line-pack: @align-method;
+  -ms-flex-line-pack: @align-content-method;
 // 2013 spec
   -webkit-align-content: flex-start;
   -moz-align-content: flex-start;
@@ -404,9 +404,9 @@
   align-content: flex-start;
 }
 
-.align-content(@align-method) when (@align-method = end) {
+.align-content(@align-content-method) when (@align-content-method = end) {
 // tweener -ms- spec
-  -ms-flex-line-pack: @align-method;
+  -ms-flex-line-pack: @align-content-method;
 // 2013 spec
   -webkit-align-content: flex-end;
   -moz-align-content: flex-end;
@@ -414,7 +414,7 @@
   align-content: flex-end;
 }
 
-.align-content(@align-method) when (@align-method = space-between) {
+.align-content(@align-content-method) when (@align-content-method = space-between) {
 // tweener -ms- spec
   -ms-flex-line-pack: justify;
 // 2013 spec
@@ -424,7 +424,7 @@
   align-content: space-between;
 }
 
-.align-content(@align-method) when (@align-method = space-around) {
+.align-content(@align-content-method) when (@align-content-method = space-around) {
 // tweener -ms- spec
   -ms-flex-line-pack: distribute;
 // 2013 spec
@@ -434,16 +434,16 @@
   align-content: space-around;
 }
 
-.align-content(@align-method) when 
-                                  (@align-method = center), 
-                                  (@align-method = stretch) {
+.align-content(@align-content-method) when 
+                                  (@align-content-method = center), 
+                                  (@align-content-method = stretch) {
 // tweener -ms- spec
-  -ms-flex-line-pack: @align-method;
+  -ms-flex-line-pack: @align-content-method;
 // 2013 spec
-  -webkit-align-content: @align-method;
-  -moz-align-content: @align-method;
-  -o-align-content: @align-method;
-  align-content: @align-method;
+  -webkit-align-content: @align-content-method;
+  -moz-align-content: @align-content-method;
+  -o-align-content: @align-content-method;
+  align-content: @align-content-method;
 }
 
 // Justify Content //
@@ -597,4 +597,19 @@
   -webkit-flex-basis: @width;
   -ms-flex: 0 1 @width;
   flex-basis: @width;
+}
+
+// flex-flow //
+
+// applies to flex container
+
+// flex-flow is actually a shorthand combination of flex-direction and flex-wrap
+
+// flex-direction accepts row | row-reverse | column | column-reverse
+// flex-wrap accepts nowrap | wrap | wrap-reverse
+
+.flex-flow (@direction; @rest...) {
+  -webkit-flex-flow: @direction @rest;
+  -ms-flex-flow: @direction @rest;
+  flex-flow: @direction @rest;
 }

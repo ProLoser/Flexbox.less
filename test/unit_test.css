@@ -136,3 +136,13 @@
   -o-flex: 1 1 100px;
   flex: 1 1 100px;
 }
+.ut_flex-flow_row {
+  -webkit-flex-flow: row ;
+  -ms-flex-flow: row ;
+  flex-flow: row ;
+}
+.ut_flex-flow_row_wrap {
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
