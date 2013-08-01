@@ -94,3 +94,38 @@
   -o-align-self: stretch;
   align-self: stretch;
 }
+.ut_flex-2009_none {
+  -webkit-box-flex: 0.0;
+  -moz-box-flex: 0.0;
+  -ms-box-flex: 0.0;
+  -o-box-flex: 0.0;
+  box-flex: 0.0;
+}
+.ut_flex-2013_none {
+  -webkit-flex: 0 0 auto;
+  -moz-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  -o-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+.ut_flex-tweener_none {
+  -webkit-flex: 0 0 auto;
+  -moz-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  -o-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+.ut_flex-2009_1 {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+}
+.ut_flex-2013_1_1_auto {
+  -webkit-flex: 1 1 100px;
+  -moz-flex: 1 1 100px;
+  -ms-flex: 1 1 100px;
+  -o-flex: 1 1 100px;
+  flex: 1 1 100px;
+}
