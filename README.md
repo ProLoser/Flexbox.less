@@ -29,6 +29,9 @@ Checkout this [demo page](http://proloser.github.com/Flexbox.less/demo.html) in 
 * [Mozilla Documentation on Flexbox](https://developer.mozilla.org/en-US/docs/CSS/Using_CSS_flexible_boxes)
 * [Paul Irish / HTML5 Rocks](http://www.html5rocks.com/en/tutorials/flexbox/quick/)
 * [Chris Coyier / Old vs New flexbox](http://css-tricks.com/old-flexbox-and-new-flexbox/)
+* [Designing CSS Layouts With Flexbox is as Easy as Pie](http://coding.smashingmagazine.com/2013/05/22/centering-elements-with-flexbox/)
+* [Flexible Box Layout Module 2009 Spec](http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/)
+* [Advanced Cross-Browser Flexbox](http://dev.opera.com/articles/view/advanced-cross-browser-flexbox/)
 
 ## Contribute
 
@@ -46,14 +49,14 @@ manner. If you find problems, feel free to open an issue, just be sure to **prov
 
 ## TODO List
 
-* align-content
-* align-items
-* align-self
-* flex-basis
-* flex-flow
-* flex-grow
-* flex-shrink
-* justify-content
+* align-content (pending)
+* align-items (pending)
+* align-self (pending)
+* flex-basis (pending)
+* flex-flow  (pending)
+* flex-grow (pending)
+* flex-shrink (pending)
+* justify-content (pending)
 
 ## License
 
