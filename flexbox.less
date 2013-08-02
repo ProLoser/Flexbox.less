@@ -76,6 +76,29 @@
   flex: 0 0 auto;
 }
 
+
+// handling when 2013 or tweener spec is 'auto' instead of shorthand values
+.flex(@spec; @flex) when (@flex = auto) and (@spec = 2013), (@spec = tweener) {
+// tweener -ms- spec is same as 2013
+// 2013 spec
+  -webkit-flex: 1 1 auto;
+  -moz-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  -o-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+// handling when 2013 or tweener spec is 'initial' instead of shorthand values
+.flex(@spec; @flex) when (@flex = initial) and (@spec = 2013), (@spec = tweener) {
+// tweener -ms- spec is same as 2013
+// 2013 spec
+  -webkit-flex: 0 1 auto;
+  -moz-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  -o-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
 // handling 2009 'none' value
 .flex(@spec; @grow) when (@grow = none) and (@spec = 2009) {
 // 2009 spec
@@ -106,7 +129,6 @@
     -o-flex: @grow @shrink @basis;
     flex: @grow @shrink @basis;
 }
-
 
 // flex-direction //
 
@@ -180,7 +202,7 @@
   -ms-box-ordinal-group: @order + 1;
   -o-box-ordinal-group: @order + 1;
   box-ordinal-group: @order + 1;
-  // 2013 spec
+// tweener -ms- spec
     -ms-flex-order: @order;
 // 2013 spec
   -webkit-order: @order;
@@ -338,7 +360,7 @@
 // stretch = stretch
 
 .align-self(@align-self-method) when (@align-self-method = start) {
-// 2009 spec
+// tweener -ms- spec
   -ms-flex-item-align: @align-self-method;
   flex-item-align: @align-self-method;
 // 2013 spec
@@ -350,7 +372,7 @@
 }
 
 .align-self(@align-self-method) when (@align-self-method = end) {
-// 2009 spec
+// tweener -ms- spec
   -ms-flex-item-align: @align-self-method;
   flex-item-align: @align-self-method;
 // 2013 spec
@@ -367,7 +389,7 @@
                                 (@align-self-method = center), 
                                 (@align-self-method = baseline), 
                                 (@align-self-method = stretch) {
-// 2009 spec
+// tweener -ms- spec
   -ms-flex-item-align: @align-self-method;
   flex-item-align: @align-self-method;
 // 2013 spec
