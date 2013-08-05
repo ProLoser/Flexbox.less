@@ -1,0 +1,97 @@
+@import "elements.less";
+
+@darkest: #000000;
+@lightest: #ffffff;
+@gray-shade: #555555;
+@gray: #9a9a9a;
+@gray-highlight: #dbdbdb;
+@lightest-shade: #f3f3f3;
+@red: #e41f35;
+@red-highlight: lighten(@red, 10%);
+@red-shade: darken(@red, 10%);
+@green: #149781;
+@green-highlight: lighten(@green, 10%);
+@green-shade: darken(@green, 10%);
+@bright-green: #abe11f;
+@bright-green-highlight: lighten(@bright-green, 10%);
+@bright-green-shade: darken(@bright-green, 10%);
+@yellow: #feef21;
+@yellow-highlight: lighten(@yellow, 10%);
+@yellow-shade: darken(@yellow, 10%);
+@blue: #1faee1;
+@blue-highlight: lighten(@blue, 10%);
+@blue-shade: darken(@blue, 10%);
+
+.darkest {background:@darkest;}
+.lightest {background:@lightest;}
+.dark-gray {background:@gray-shade;}
+.medium-gray {background:@gray;}
+.light-gray {background:@gray-highlight;}
+.highlight-gray {background:@lightest-shade;}
+.red {background:@red;}
+.green {background:@green;}
+.bright-green {background:@bright-green;}
+.yellow {background:@yellow;}
+.blue {background:@blue;}
+
+body {
+	background: #000000;
+	font-family: "Calibri", "Verdana", "Tahoma", "Arial", sans-serif;
+	font-size: 16px;
+}
+
+code, pre {
+	background: @lightest-shade;
+	border-radius:5px;
+	padding:2px;
+	border: 1px dashed @gray-highlight;
+	line-height: 1.8rem;
+}
+
+ul li ,ol li {
+	margin: 5px 0;
+	line-height: 1.4rem;
+
+}
+
+.contained-white {
+	border-radius:5px;
+	background-color:@lightest;
+	margin: 5px;
+	padding:5px;
+	.bordered(@top-color: @gray, @right-color: @gray, @bottom-color: @gray-shade, @left-color: @gray-shade);
+}
+
+.contained-gray {
+	border-radius:5px;
+	background-color:@gray-highlight;
+	margin: 5px;
+	padding:5px;
+	.bordered(@top-color: @lightest-shade, @right-color: @gray-highlight, @bottom-color: @darkest, @left-color: @gray-shade);
+}
+
+.contained-green {
+	border-radius: 5px;
+	background-color:@green;
+	margin: 5px;
+	padding:5px;
+	.bordered(@top-color: @green-highlight, @right-color: @green-highlight, @bottom-color: @green-shade, @left-color: @green-shade);
+}
+
+.contained-blue {
+	border-radius: 5px;
+	background-color:@blue;
+	margin: 5px;
+	padding:5px;
+	font-size:.8rem;
+	.bordered(@top-color: @blue-highlight, @right-color: @blue-highlight, @bottom-color: @blue-shade, @left-color: @blue-shade);
+}
+
+.flex-label {
+	padding: 0 5px 0 5px;
+	font-weight:700;
+}
+
+.flex-value {
+	padding: 0 5px 0 0;
+}

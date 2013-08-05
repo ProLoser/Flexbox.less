@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="unit_test.css">
+	<link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<title>Testing Flexbox.less CSS Generation</title>
+</head>
+<body>
+	<div class="contained-white">
+		<h1>Flexbox Modeling</h1>
+		<p>This page is meant to act like a bit of a static zen css garden for flexbox. My intent is simply to try and show how the various css properties in the flexbox model interact with each other. </p>
+		<p>To that end, I've used the same basic DOM structure, and just applied class changes as necessary to reflect the various CSS rules. In some instances I've removed DOM elements where it wasn't necessary to the example.</p>
+		<div class="flexRow isInline contained-green">
+			<pre>
+&lt;div class="flex-container contained-green"&gt;
+	&lt;div class="contained-blue"&gt;Flex Child 1
+		&lt;div class="contained-white"&gt;Flex Child Child A&lt;/div&gt;
+		&lt;div class="contained-white"&gt;Flex Child Child B&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="contained-blue"&gt;Flex Child 2&lt;/div&gt;
+	&lt;div class="contained-blue"&gt;Flex Child 3&lt;/div&gt;
+	&lt;div class="contained-blue"&gt;Flex Child 4&lt;/div&gt;
+	&lt;div class="contained-blue"&gt;Flex Child 5&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="flex-container contained-green"&gt;
+	&lt;div class="contained-blue flexRow"&gt;Flex Child 1
+		&lt;div class="contained-white"&gt;Flex Child Child A&lt;/div&gt;
+		&lt;div class="contained-white"&gt;Flex Child Child B&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="contained-blue"&gt;Flex Child 2&lt;/div&gt;
+	&lt;div class="contained-blue"&gt;Flex Child 3&lt;/div&gt;
+	&lt;div class="contained-blue"&gt;Flex Child 4&lt;/div&gt;
+	&lt;div class="contained-blue"&gt;Flex Child 5&lt;/div&gt;
+&lt;/div&gt;
+			</pre>
+		</div>
+		<h2>Flexbox.Less</h2>
+		<p>This page has been built using <a href="https://github.com/ProLoser/Flexbox.less" title="Flexbox.less on Github">Flexbox.less</a>. </p>
+		<div class="flexRow isInline flexWrap">
+			<div class="flexGrow1 flexBasis30Percent contained-gray">
+				<h2>The Most Important Things You Need to Know About Flexbox</h2>
+				<ol>
+					<li><strong>Flex Containers</strong>: A flex container is an element whose display setting has been set to <code>display: flex</code> or <code>display:inline-flex</code>. A flex container interacts with its siblings and with its children. A flex container does not directly interact with its parent container unless that parent container is also a flex container.</li>
+					<li><strong>Inline-Flex</strong>: An inline-flexed item that has a <code>position: absolute</code> or any <code>float: {value}</code> specified is computed to be <code>display: flex</code> instead of <code>display: inline-flex</code></li>
+					<li><strong>Flex Items</strong>: A flex item is an element that is a direct descendant of an element whose display value is set to <code>display: flex</code> or <code>display: inline-flex</code>. </li>
+					<ol>
+						<li><strong>Anonymous Flex Items</strong>: All direct descendants of a flexed element are flex items, through inheritance. You do not need to do anything to a direct descendant element to make it a flex item. It simply is.<br />
+							Second generation descendants, however, are NOT flex items. This is an incredibly important distinction, as you start nesting HTML elements and getting unexpected behavior. </li>
+						<li><strong>Explicit Flex Items</strong>: There is no CSS rule to indicate an element is a flex item. <strong>Therefore, in order for an element to be a flex item, its parent MUST be a flex container. </strong></li>
+						<li><code>float: {value}</code> and <code>clear: {value}</code> do not work on flex items.</li>
+						<li><code>vertical-align: {value}</code> does not work on a flex item.</li>
+						<li><strong>Empty Flex Items</strong>: A flex item that contains only white space is not rendered (as if it were <code>display: none</code>).</li>
+					</ol>
+				</ol>
+			</div>
+				<div class="flexGrow1 flexBasis30Percent contained-blue">
+					<h2>Flex Container Rules</h2>
+					<ul>
+						<li><code>display: flex</code></li>
+						<li><code>display: inline-flex</code></li>
+						<li><code>flex-direction: {row | column | row-reverse | column-reverse}</code></li>
+						<li><code>flex-wrap: {wrap | nowrap | wrap-reverse}</code></li>
+						<li><code>align-items: {flex-start | flex-end | center | baseline | stretch}</code></li>
+						<li><code>align-content: {flex-start | flex-end | space-between | space-around | center | stretch}</code></li>
+						<li><code>justify-content: {flex-start | flex-end | space-between | space-around | center}</code></li>
+					</ul>
+					<h3>Flex Container Shorthand Rules</h3>
+					<ul>
+						<li><code>flex-flow: {flex-direction | flex-wrap}</code></li>
+					</ul>
+					<h2>Flex Item Rules</h2>
+					<ul>
+						<li><code>order: {integer}</code></li>
+						<li><code>align-self: {auto | flex-start | flex-end | center | baseline | stretch}</code></li>
+						<li><code>flex-grow: {number}</code></li>
+						<li><code>flex-shrink: {number}</code></li>
+						<li><code>flex-basis: {number | % em pt rem}</code></li>
+					</ul>
+					<h3>Flex Item Shorthand Rules</h3>
+					<ul>
+						<li><code>flex: { none | initial | inherit} | { flex-grow} {flex-shrink} {flex-basis}</code></li>
+					</ul>
+				</div>
+		</div>
+	</div>
+
+	<div class="contained-white">
+		<h1>1. Basic Flex Container</h1>
+		<p>The only css being applied to the div is <code>display: flex</code>.</p>
+		<p><strong>Note: </strong>The Flex Child Child boxes are NOT operating as flex children. Flex containers apply their rules to immediate descendants only, and not further descendants. To apply flex rules to the Flex Child Child containers, you would need to identify them (or their immediate ancestor) as a flex container.</p>
+		<div class="flex-container contained-green">
+			<div class="contained-blue">Flex Child 1
+				<div class="contained-white">Flex Child Child A</div>
+				<div class="contained-white">Flex Child Child B</div>
+			</div>
+			<div class="contained-blue">Flex Child 2</div>
+			<div class="contained-blue">Flex Child 3</div>
+			<div class="contained-blue">Flex Child 4</div>
+			<div class="contained-blue">Flex Child 5</div>
+		</div>
+		<p>Watch what happens to Flex Child Child when we make Flex Child 5 a flex container (in addition to being a flex-child, due to being a direct descendant of a flex container).</p>
+		<div class="flex-container contained-green">
+			<div class="contained-blue flexRow">Flex Child 1
+				<div class="contained-white">Flex Child Child A</div>
+				<div class="contained-white">Flex Child Child B</div>
+			</div>
+			<div class="contained-blue">Flex Child 2</div>
+			<div class="contained-blue">Flex Child 3</div>
+			<div class="contained-blue">Flex Child 4</div>
+			<div class="contained-blue">Flex Child 5</div>
+		</div>
+		<p>As a result of turning Flex Child 1 into a flex container, the children become flex items and override their <code>display: block</code> behavior.</p>
+	</div>
+
+	<div class="contained-white">
+		<h1>2. Flex Container | Flex-Direction: Row</h1>
+		<h2>Children With <code>align-self</code> Rules</h2>
+		<p>Because the default for <code>flex-direction</code> is <code>flex-direction: row</code>, there is no functional difference between the first example and this example.</p>
+		<p>Flex Child 5 has been given the additional property of <code>align-self: flex-end;</code>This aligns Flex Child to the CROSS axis of the container (in this case, the cross axis is a vertical line, since the container is a row/horizontal line).</p>
+		<div class="flexRow contained-green">
+			<div class="contained-blue">Flex Child 1
+				<div class="contained-white">Flex Child Child A</div>
+				<div class="contained-white">Flex Child Child B</div>
+			</div>
+			<div class="contained-blue flexRow">Flex Child 2
+				<div class="contained-white">Flex Child Child A</div>
+				<div class="contained-white">Flex Child Child B</div>
+			</div>
+			<div class="contained-blue selfStart">Flex Child 3: <code>align-self: flex-start;</code></div>
+			<div class="contained-blue selfCenter">Flex Child 4: <code>align-self: center;</code></div>
+			<div class="contained-blue selfEnd">Flex Child 5: <code>align-self: flex-end;</code></div>
+		</div>
+	</div>
+
+	<div class="contained-white">
+		<h1>4. Flex Container | Flex-Direction: Row-Reverse</h1>
+		<div class="flexRowReverse contained-green">
+			<div class="contained-blue">Flex Child 1
+				<div class="contained-white">Flex Child Child A</div>
+				<div class="contained-white">Flex Child Child B</div>
+			</div>
+			<div class="contained-blue flexRow">Flex Child 2
+				<div class="contained-white">Flex Child Child A</div>
+				<div class="contained-white">Flex Child Child B</div>
+			</div>
+			<div class="contained-blue selfStart">Flex Child 3: <code>align-self: flex-start;</code></div>
+			<div class="contained-blue selfCenter">Flex Child 4: <code>align-self: center;</code></div>
+			<div class="contained-blue selfEnd">Flex Child 5: <code>align-self: flex-end;</code></div>
+		</div>
+	</div>
+
+	<div class="contained-white">
+		<h1>3. Flex Container | Flex-Direction: Column</h1>
+		<h2>Children With <code>align-self</code> Rules</h2>
+		<p>The important difference here is that the Flex Child Child div elements are still acting under <code>display: block</code> rules--i.e. 100% of the width of their containing element.</p>
+		<p>An interesting thing to note, as well, is that the HTML for Flex Children 3, 4, and 5 are identical in scenarios 2 and 3. Because we have changed the orientation of the container, we have also changed the cross axis from vertical to horizontal, and thus the <code>align-self</code> rules, which are identical in both instances, behave differently.</p>
+		<p>Flex Child 2 has been given the same children as Flex Child 1 (identical markup in the HTML). Flex Child 2 has then been given <code>display: flex</code> and <code>flex-direction: row</code>, making it a flex container, and changing the layout behavior of the children.</p>
+		<div class="flexColumn contained-green">
+			<div class="contained-blue">Flex Child 1
+				<div class="contained-white">Flex Child Child A</div>
+				<div class="contained-white">Flex Child Child B</div>
+			</div>
+			<div class="contained-blue flexRow">Flex Child 2
+				<div class="contained-white">Flex Child Child A</div>
+				<div class="contained-white">Flex Child Child B</div>
+			</div>
+			<div class="contained-blue selfStart">Flex Child 3: <code>align-self: flex-start;</code></div>
+			<div class="contained-blue selfCenter">Flex Child 4: <code>align-self: center;</code></div>
+			<div class="contained-blue selfEnd">Flex Child 5: <code>align-self: flex-end;</code></div>
+		</div>
+	</div>
+
+	<div class="contained-white">
+		<h1>5. Flex Container | Flex-Direction: Column-Reverse</h1>
+		<div class="flexColumnReverse contained-green">
+			<div class="contained-blue">Flex Child 1
+				<div class="contained-white">Flex Child Child A</div>
+				<div class="contained-white">Flex Child Child B</div>
+			</div>
+			<div class="contained-blue flexRow">Flex Child 2
+				<div class="contained-white">Flex Child Child A</div>
+				<div class="contained-white">Flex Child Child B</div>
+			</div>
+			<div class="contained-blue selfStart">Flex Child 3: <code>align-self: flex-start;</code></div>
+			<div class="contained-blue selfCenter">Flex Child 4: <code>align-self: center;</code></div>
+			<div class="contained-blue selfEnd">Flex Child 5: <code>align-self: flex-end;</code></div>
+		</div>
+	</div>
+
+	<div class="contained-white">
+		<h1>6. Inline Flex Container | Flex-Direction: Row</h1>
+		<p>Identical to (1), but the two main flex containers are both spec'd as <code>display:inline-flex;</code>, putting them inline with each other (in a row format). </p>
+		<div class="flexRow isInline contained-green">
+			<div class="contained-blue">Flex Child 1
+				<div class="contained-white">Flex Child Child A</div>
+				<div class="contained-white">Flex Child Child B</div>
+			</div>
+			<div class="contained-blue">Flex Child 2</div>
+			<div class="contained-blue">Flex Child 3</div>
+			<div class="contained-blue">Flex Child 4</div>
+			<div class="contained-blue">Flex Child 5</div>
+		</div>
+		<div class="flexRow isInline contained-green">
+			<div class="contained-blue flexRow">Flex Child 1
+				<div class="contained-white">Flex Child Child A</div>
+				<div class="contained-white">Flex Child Child B</div>
+			</div>
+			<div class="contained-blue">Flex Child 2</div>
+			<div class="contained-blue">Flex Child 3</div>
+			<div class="contained-blue">Flex Child 4</div>
+			<div class="contained-blue">Flex Child 5</div>
+		</div>
+	</div>
+
+	<div class="contained-white">
+		<h1>7. Inline Flex Container | Flex-Direction: Column</h1>
+		<div class="flexColumn isInline contained-green">
+			<div class="contained-blue">Flex Child 1
+				<div class="contained-white">Flex Child Child A</div>
+				<div class="contained-white">Flex Child Child B</div>
+			</div>
+			<div class="contained-blue">Flex Child 2</div>
+			<div class="contained-blue">Flex Child 3</div>
+			<div class="contained-blue">Flex Child 4</div>
+			<div class="contained-blue">Flex Child 5</div>
+		</div>
+		<div class="flexColumn isInline contained-green">
+			<div class="contained-blue flexRow">Flex Child 1
+				<div class="contained-white">Flex Child Child A</div>
+				<div class="contained-white">Flex Child Child B</div>
+			</div>
+			<div class="contained-blue">Flex Child 2</div>
+			<div class="contained-blue">Flex Child 3</div>
+			<div class="contained-blue">Flex Child 4</div>
+			<div class="contained-blue">Flex Child 5</div>
+		</div>
+	</div>
+
+	<div class="contained-white">
+		<h1>7. Ordering Flex Items</h1>
+		<div class="flex-container contained-green">
+			<div class="contained-blue flexColumn order5">Flex Child 1 (order: 5)
+				<div class="contained-white order2">Flex Child Child A (order: 2)</div>
+				<div class="contained-white order1">Flex Child Child B (order: 1)</div>
+			</div>
+			<div class="contained-blue order4">Flex Child 2 (order: 4)</div>
+			<div class="contained-blue order3">Flex Child 3 (order: 3)</div>
+			<div class="contained-blue order2">Flex Child 4 (order: 2)</div>
+			<div class="contained-blue order1">Flex Child 5 (order: 1)</div>
+		</div>
+	</div>
+
+	<a href="https://github.com/ProLoser/Flexbox.less"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+
+</body>
+</html>

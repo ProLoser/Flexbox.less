@@ -1,0 +1,105 @@
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+.darkest {
+  background: #000000;
+}
+.lightest {
+  background: #ffffff;
+}
+.dark-gray {
+  background: #555555;
+}
+.medium-gray {
+  background: #9a9a9a;
+}
+.light-gray {
+  background: #dbdbdb;
+}
+.highlight-gray {
+  background: #f3f3f3;
+}
+.red {
+  background: #e41f35;
+}
+.green {
+  background: #149781;
+}
+.bright-green {
+  background: #abe11f;
+}
+.yellow {
+  background: #feef21;
+}
+.blue {
+  background: #1faee1;
+}
+body {
+  background: #000000;
+  font-family: "Calibri", "Verdana", "Tahoma", "Arial", sans-serif;
+  font-size: 16px;
+}
+code,
+pre {
+  background: #f3f3f3;
+  border-radius: 5px;
+  padding: 2px;
+  border: 1px dashed #dbdbdb;
+  line-height: 1.8rem;
+}
+ul li,
+ol li {
+  margin: 5px 0;
+  line-height: 1.4rem;
+}
+.contained-white {
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin: 5px;
+  padding: 5px;
+  border-top: solid 1px #9a9a9a;
+  border-left: solid 1px #555555;
+  border-right: solid 1px #9a9a9a;
+  border-bottom: solid 1px #555555;
+}
+.contained-gray {
+  border-radius: 5px;
+  background-color: #dbdbdb;
+  margin: 5px;
+  padding: 5px;
+  border-top: solid 1px #f3f3f3;
+  border-left: solid 1px #555555;
+  border-right: solid 1px #dbdbdb;
+  border-bottom: solid 1px #000000;
+}
+.contained-green {
+  border-radius: 5px;
+  background-color: #149781;
+  margin: 5px;
+  padding: 5px;
+  border-top: solid 1px #1ac4a7;
+  border-left: solid 1px #0e6a5b;
+  border-right: solid 1px #1ac4a7;
+  border-bottom: solid 1px #0e6a5b;
+}
+.contained-blue {
+  border-radius: 5px;
+  background-color: #1faee1;
+  margin: 5px;
+  padding: 5px;
+  font-size: .8rem;
+  border-top: solid 1px #4cbee7;
+  border-left: solid 1px #188cb5;
+  border-right: solid 1px #4cbee7;
+  border-bottom: solid 1px #188cb5;
+}
+.flex-label {
+  padding: 0 5px 0 5px;
+  font-weight: 700;
+}
+.flex-value {
+  padding: 0 5px 0 0;
+}
