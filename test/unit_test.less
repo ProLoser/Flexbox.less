@@ -5,7 +5,7 @@
 	.flexbox;
 }
 
-.flex-container.is-inline {
+.is-inline {
 	.inline-flexbox;
 }
 
@@ -274,4 +274,102 @@
 
 .ut_flex-basis_10rem {
 	.flex-basis(10rem);
+}
+
+/* the following classes are integration/regression testing of the classes into an HTML page */
+
+.flexRow {
+	.flex-container;
+	.flex-direction(row);
+}
+
+.flexRow.isInline {
+	.is-inline;
+	.flex-direction(row);
+}
+
+.flexColumn {
+	.flex-container;
+	.flex-direction(column);
+}
+
+.flexColumn.isInline {
+	.is-inline;
+	.flex-direction(column);
+}
+
+.flexRowReverse {
+	.flex-container;
+	.flex-direction(row-reverse);
+}
+
+.flexRowReverse.isInline {
+	.is-inline;
+	.flex-direction(row-reverse);
+}
+
+.flexColumnReverse {
+	.flex-container;
+	.flex-direction(column-reverse);
+}
+
+.flexColumnReverse.isInline {
+	.is-inline;
+	.flex-direction(column-reverse);
+}
+
+.selfEnd {
+	.align-self(end);
+}
+
+.selfStart {
+	.align-self(start);
+}
+
+.selfCenter {
+	.align-self(center);
+}
+
+.flexBasis50Percent {
+	.flex-basis(50%);
+}
+
+.flexBasis30Percent {
+	.flex-basis(30%);
+}
+
+.flexBasis20Percent {
+	.flex-basis(20%);
+}
+
+.flexWrap {
+	.flex-wrap(wrap);
+}
+
+.flexGrow2 {
+	.flex-grow(2);
+}
+
+.flexGrow1 {
+	.flex-grow(1);
+}
+
+.order1 {
+	.order(1);
+}
+
+.order2 {
+	.order(2);
+}
+
+.order3 {
+	.order(3);
+}
+
+.order4 {
+	.order(4);
+}
+
+.order5 {
+	.order(5);
 }
