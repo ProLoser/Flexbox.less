@@ -1,0 +1,38 @@
+//In order to make file shorter we should use nested mixins
+
+// FLEX DIRECTION 
+.old_flex_direction(@bd:normal,@bo:horizontal){
+    -webkit-box-direction: @bd;
+    -moz-box-direction: @bd;
+    -webkit-box-orient: @bo;
+    -moz-box-orient: @bo;
+};
+.flex_direction(@direction) when (@direction=row) {    .old_flex_direction;}
+.flex_direction(@direction) when (@direction=column) {.old_flex_direction(normal,vertical)}
+.flex_direction(@direction) when (@direction=row-reverse) { .old_flex_direction(reverse);}
+.flex_direction(@direction) when (@direction=column-reverse) { .old_flex_direction(reverse,vertical);}
+
+.flex_direction(@direction:row) {
+    -webkit-flex-direction: @direction;
+    -moz-flex-direction: @direction;
+    -ms-flex-direction: @direction;
+    flex-direction: @direction;
+}
+
+// JUSTIFY-CONTENT
+.old_flex_justify_content(@old:normal){
+     -webkit-box-pack:@old;
+     -moz-box-pack:@old;
+     -ms-flex-pack:@old;
+
+}
+.flex_justify_content(@justify) when (@justify = flex-start) { .old_flex_justify_content(start);}
+.flex_justify_content(@justify) when (@justify = flex-end) {   .old_flex_justify_content(end);}
+.flex_justify_content(@justify) when (@justify = space-between) {   .old_flex_justify_content(justify);}
+.flex_justify_content(@justify) when (@justify = space-around) {   .old_flex_justify_content(distribute);}
+.flex_justify_content(@justify) when (@justify = center) {   .old_flex_justify_content(center);}
+
+.flex_justify_content(@justify:flex-start){
+  -webkit-justify-content: @justify;
+  justify-content: @justify;
+}
