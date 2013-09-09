@@ -1,6 +1,6 @@
 // old= 2009 and tweener
 //CREANDO MIXINS DE FLEX
-.flex_display(@flex:flex) {
+.flex-display(@flex:flex) {
     display: -webkit-box; 
     display: -moz-box; 
     display:  ~"@{wk}@{flex}";
@@ -8,32 +8,32 @@
     display:@flex;
 }
 // FLEX DIRECTION
-//direction of the flex container's main axis
-.old_box_direction(@old:normal) when (iskeyword(@old))  {
+//direction of the flex containers main axis
+.old-box-direction(@old:normal) when (iskeyword(@old))  {
   -webkit-box-direction: @old;
   -moz-box-direction: @old;
   -ms-box-direction: @old;
   -o-box-direction: @old;
   box-direction: @old;
 }
-.old_box_orient(@old:horizontal) when (iskeyword(@old)) {
+.old-box-orient(@old:horizontal) when (iskeyword(@old)) {
   -webkit-box-orient: @old;
   -moz-box-orient: @old;
   -ms-box-orient: @old;
   -o-box-orient: @old;
   box-orient: @old;
 }
-  .old_flex_direction(@bd:normal,@bo:horizontal){
-      .old_box_direction(@bd);
-      .old_box_orient(@bo);
+  .old-flex-direction(@bd:normal,@bo:horizontal){
+      .old-box-direction(@bd);
+      .old-box-orient(@bo);
   };
 
-.flex_direction(@direction) when (@direction=row) {    .old_flex_direction(normal,horizontal);}
-.flex_direction(@direction) when (@direction=column) {.old_box_orient(vertical)}
-.flex_direction(@direction) when (@direction=row-reverse) { .old_box_direction(reverse);}
-.flex_direction(@direction) when (@direction=column-reverse) { .old_flex_direction(reverse,vertical);}
+.flex-direction(@direction) when (@direction=row) {    .old-flex-direction(normal,horizontal);}
+.flex-direction(@direction) when (@direction=column) {.old-box-orient(vertical)}
+.flex-direction(@direction) when (@direction=row-reverse) { .old-box-direction(reverse);}
+.flex-direction(@direction) when (@direction=column-reverse) { .old-flex-direction(reverse,vertical);}
 
-.flex_direction(@direction) when (iskeyword(@direction))  {
+.flex-direction(@direction) when (iskeyword(@direction))  {
 
     -webkit-flex-direction: @direction;
     -moz-flex-direction: @direction;
@@ -45,7 +45,7 @@
 
 // JUSTIFY-CONTENT
 //align flex items along the main axis of the current line of the flex container
-.old_flex_justify_content(@old:start) when (iskeyword(@old)) {
+.old-flex-justify-content(@old:start) when (iskeyword(@old)) {
      -webkit-box-pack:@old;
      -moz-box-pack:@old;
      -o-box-pack:@old;
@@ -53,13 +53,13 @@
 
 }
 
-.flex_justify_content(@justify) when (@justify = flex-start) { .old_flex_justify_content;}
-.flex_justify_content(@justify) when (@justify = flex-end) {   .old_flex_justify_content(end);}
-.flex_justify_content(@justify) when (@justify = space-between) {   .old_flex_justify_content(justify);}
-.flex_justify_content(@justify) when (@justify = space-around) {   .old_flex_justify_content(distribute);}
-.flex_justify_content(@justify) when (@justify = center) {   .old_flex_justify_content(center);}
+.flex-justify-content(@justify) when (@justify = flex-start) { .old-flex-justify-content;}
+.flex-justify-content(@justify) when (@justify = flex-end) {   .old-flex-justify-content(end);}
+.flex-justify-content(@justify) when (@justify = space-between) {   .old-flex-justify-content(justify);}
+.flex-justify-content(@justify) when (@justify = space-around) {   .old-flex-justify-content(distribute);}
+.flex-justify-content(@justify) when (@justify = center) {   .old-flex-justify-content(center);}
 
-.flex_justify_content(@justify:flex-start) when (iskeyword(@justify)) {
+.flex-justify-content(@justify:flex-start) when (iskeyword(@justify)) {
   -webkit-justify-content: @justify;
   -moz-justify-content: @justify;
   -ms-justify-content: @justify;
@@ -70,7 +70,7 @@
 
 //ALIGN-ITEMS
 // align flex items along the cross axis of the current line of the flex container
-.old_flex_align_items(@old:start) when (iskeyword(@old))  {
+.old-flex-align-items(@old:start) when (iskeyword(@old))  {
  -webkit-box-align: @old;
   -moz-box-align: @old;
   -ms-box-align: @old;
@@ -80,14 +80,14 @@
 
 }
 
-.flex_align_items(@align_items) when (@align_items = flex-start) { .old_flex_align_items(start)}
-.flex_align_items(@align_items) when (@align_items = flex-end) { .old_flex_align_items(end);}
-.flex_align_items(@align_items) when (@align_items = center),
+.flex-align-items(@align_items) when (@align_items = flex-start) { .old-flex-align-items(start)}
+.flex-align-items(@align_items) when (@align_items = flex-end) { .old-flex-align-items(end);}
+.flex-align-items(@align_items) when (@align_items = center),
                                      (@align_items = stretch),
-                                     (@align_items = baseline) { .old_flex_align_items(@align_items);}
+                                     (@align_items = baseline) { .old-flex-align-items(@align_items);}
 
 
-.flex_align_items(@align_items:flex-start) when (iskeyword(@align_items)) {
+.flex-align-items(@align_items:flex-start) when (iskeyword(@align_items)) {
   -webkit-align-items: @align_items;
   -moz-align-items: @align_items;
   -ms-align-items: @align_items;
@@ -99,7 +99,7 @@
 // LINE WRAP
 // controls whether the flex container is single-line or multi-line, and the direction of the cross axis
 
-.old_box_lines(@old:single) when (iskeyword(@old))  {
+.old-box-lines(@old:single) when (iskeyword(@old))  {
   -webkit-lines: @old;
   -webkit-box-lines: @old;
   -moz-box-lines: @old;
@@ -110,11 +110,11 @@
 
 
 
-.flex_wrap(@wrap) when (@wrap = wrap), {.old_box_lines(multiple)}
-.flex_wrap(@wrap) when (@wrap = wrap-reverse), {.old_box_lines(multiple);.old_box_direction(reverse);}
-.flex_wrap(@wrap) when (@wrap = nowrap), {.old_box_lines;}
+.flex-wrap(@wrap) when (@wrap = wrap), {.old-box-lines(multiple)}
+.flex-wrap(@wrap) when (@wrap = wrap-reverse), {.old-box-lines(multiple);.old-box-direction(reverse);}
+.flex-wrap(@wrap) when (@wrap = nowrap), {.old-box-lines;}
 
-.flex_wrap(@wrap:wrap) when (iskeyword(@wrap)) {
+.flex-wrap(@wrap:wrap) when (iskeyword(@wrap)) {
   -webkit-flex-wrap: @wrap;
   -moz-flex-wrap: @wrap;
   -ms-flex-wrap: @wrap;
@@ -124,45 +124,45 @@
 // ALIGN CONTENT
 // align a flex containers lines within the flex container when there is extra space in the cross axis, similar to how *justify-content* aligns individual items within the main axis.
 // Note, this property has no effect when the flexbox has only a single line
-.old_flex_align_content(@old) when (iskeyword(@old)) {
+.old-flex-align-content(@old) when (iskeyword(@old)) {
     -ms-flex-line-pack:@old;
 }
 
-.flex_align_content(@align_content) when (@align_content = flex-start) {.old_flex_align_content(start)}
-.flex_align_content(@align_content) when (@align_content = flex-end) {.old_flex_align_content(end)}
-.flex_align_content(@align_content) when (@align_content = space-between) {.old_flex_align_content(justify)}
-.flex_align_content(@align_content) when (@align_content = space-around) {.old_flex_align_content(distribute)}
+.flex-align-content(@align_content) when (@align_content = flex-start) {.old-flex-align-content(start)}
+.flex-align-content(@align_content) when (@align_content = flex-end) {.old-flex-align-content(end)}
+.flex-align-content(@align_content) when (@align_content = space-between) {.old-flex-align-content(justify)}
+.flex-align-content(@align_content) when (@align_content = space-around) {.old-flex-align-content(distribute)}
 
-.flex_align_content(@align_content) when (iskeyword(@align_content)) {
+.flex-align-content(@align_content) when (iskeyword(@align_content)) {
   -webkit-align-content: flex-start;
   -moz-align-content: flex-start;
   -o-align-content: flex-start;
   align-content: flex-start;
 }
 // FLEX FLOW SHORTHAND RULE
-.flex_flow(@direction:row,@wrap:nowrap) {
-        .flex_direction(@direction);
-        .flex_wrap(@wrap);
+.flex-flow(@direction:row,@wrap:nowrap) {
+        .flex-direction(@direction);
+        .flex-wrap(@wrap);
 }
 
 //A MIXIN WITH ALL CONTAINER RULES IN ONE MIXIN
-.flex_container(@flex:flex,@direction:0,@wrap:0,@justify:0,@align_items:0,@align_content:0) {
-    .flex_display(@flex);
-    .flex_direction(@direction);
-    .flex_wrap(@wrap);
-    .flex_justify_content(@justify);
-    .flex_align_items(@align_items);
-    .flex_align_content(@align_content);
+.flex-container(@flex:flex,@direction:0,@wrap:0,@justify:0,@align_items:0,@align_content:0) {
+    .flex-display(@flex);
+    .flex-direction(@direction);
+    .flex-wrap(@wrap);
+    .flex-justify-content(@justify);
+    .flex-align-items(@align_items);
+    .flex-align-content(@align_content);
 
 }
 
 
 
-// LET'S BEGIN WITH THE ITEMS PROPERTIES 
+// LETS BEGIN WITH THE ITEMS PROPERTIES 
 
 // FLEX-ORDER
 // controls the order in which flex items appear within their flex container
-.flex_order(@order) when (isnumber(@order)) {
+.flex-order(@order) when (isnumber(@order)) {
    -webkit-box-ordinal-group: @order + 1;
   -moz-box-ordinal-group: @order + 1;
   -ms-box-ordinal-group: @order + 1;
@@ -181,18 +181,18 @@
 
 //ALIGN SELF
 // allows the alignment to be overridden for individual flex items
-.old_flex_align_self(@old) when (iskeyword(@old)) {
+.old-flex-align-self(@old) when (iskeyword(@old)) {
   -ms-flex-item-align: @old;
   flex-item-align: @old;
 }
-.flex_align_self(@align_self) when (@align_self = flex-start) {.old_flex_align_self(start)}
-.flex_align_self(@align_self) when (@align_self = flex-end) {.old_flex_align_self(end)}
-.flex_align_self(@align_self) when  (@align_self = auto), 
+.flex-align-self(@align_self) when (@align_self = flex-start) {.old-flex-align-self(start)}
+.flex-align-self(@align_self) when (@align_self = flex-end) {.old-flex-align-self(end)}
+.flex-align-self(@align_self) when  (@align_self = auto), 
                                 (@align_self = center), 
                                 (@align_self = baseline), 
-                                (@align_self = stretch) {.old_flex_align_self(@align_self)}
+                                (@align_self = stretch) {.old-flex-align-self(@align_self)}
 
-.flex_align_self(@align_self:auto) when (iskeyword(@align_self)) {
+.flex-align-self(@align_self:auto) when (iskeyword(@align_self)) {
   -webkit-align-self: flex-start;
   -moz-align-self: flex-start;
   -ms-align-self: flex-start;
@@ -224,8 +224,8 @@
 
 // FLEX ITEM
 // MIXIN TO DEFINE ONE ITEM COMPLETELY
-.flex_item(@grow:false,@shrink:false,@basis:0,@order:false,@align_self:0){
+.flex-item(@grow:false,@shrink:false,@basis:0,@order:false,@align_self:0){
   .flex(@grow,@shrink,@basis);
-  .flex_order(@order);
-  .flex_align_self(@align_self);
+  .flex-order(@order);
+  .flex-align-self(@align_self);
 }
