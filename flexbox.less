@@ -288,7 +288,7 @@
 // baseline == baseline
 // stretch = stretch
 
-.align-items(@align-item-method) when (@align-item-method = start) {
+.align-items(@align-item-method) when (@align-item-method = flex-start) {
 // 2009 spec
   -webkit-box-align: start;
   -moz-box-align: start;
@@ -298,33 +298,33 @@
 // tweener -ms- spec
   -ms-flex-align: start;
 // 2013 spec
-  -webkit-align-items: flex-start;
-  -moz-align-items: flex-start;
-  -ms-align-items: flex-start;
-  -o-align-items: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: @align-item-method;
+  -moz-align-items: @align-item-method;
+  -ms-align-items: @align-item-method;
+  -o-align-items: @align-item-method;
+  align-items: @align-item-method;
 }
 
-.align-items(@align-item-method) when (@align-item-method = end) {
-  // 2009 spec
-    -webkit-box-align: end;
-    -moz-box-align: end;
-    -ms-box-align: end;
-    -o-box-align: end;
-    box-align: end;
-  // tweener -ms- spec
-    -ms-flex-align: end;
-  // 2013 spec
-  -webkit-align-items: flex-end;
-  -moz-align-items: flex-end;
-  -ms-align-items: flex-end;
-  -o-align-items: flex-end;
-  align-items: flex-end;
+.align-items(@align-item-method) when (@align-item-method = flex-end) {
+// 2009 spec
+  -webkit-box-align: end;
+  -moz-box-align: end;
+  -ms-box-align: end;
+  -o-box-align: end;
+  box-align: end;
+// tweener -ms- spec
+  -ms-flex-align: end;
+// 2013 spec
+  -webkit-align-items: @align-item-method;
+  -moz-align-items: @align-item-method;
+  -ms-align-items: @align-item-method;
+  -o-align-items: @align-item-method;
+  align-items: @align-item-method;
 }
 
 // for center, baseline, and stretch, which are the same in all specs
 .align-items(@align-item-method) when 
-                                  (@align-item-method = center), 
+                                  (@align-item-method = center),
                                   (@align-item-method = baseline),
                                   (@align-item-method = stretch) {
 // 2009 spec
@@ -359,35 +359,35 @@
 // baseline == baseline
 // stretch = stretch
 
-.align-self(@align-self-method) when (@align-self-method = start) {
+.align-self(@align-self-method) when (@align-self-method = flex-start) {
 // tweener -ms- spec
-  -ms-flex-item-align: @align-self-method;
-  flex-item-align: @align-self-method;
+  -ms-flex-item-align: start;
+  flex-item-align: start;
 // 2013 spec
-  -webkit-align-self: flex-start;
-  -moz-align-self: flex-start;
-  -ms-align-self: flex-start;
-  -o-align-self: flex-start;
-  align-self: flex-start;
+  -webkit-align-self: @align-self-method;
+  -moz-align-self: @align-self-method;
+  -ms-align-self: @align-self-method;
+  -o-align-self: @align-self-method;
+  align-self: @align-self-method;
 }
 
-.align-self(@align-self-method) when (@align-self-method = end) {
+.align-self(@align-self-method) when (@align-self-method = flex-end) {
 // tweener -ms- spec
-  -ms-flex-item-align: @align-self-method;
-  flex-item-align: @align-self-method;
+  -ms-flex-item-align: end;
+  flex-item-align: end;
 // 2013 spec
-  -webkit-align-self: flex-end;
-  -moz-align-self: flex-end;
-  -ms-align-self: flex-end;
-  -o-align-self: flex-end;
-  align-self: flex-end;
+  -webkit-align-self: @align-self-method;
+  -moz-align-self: @align-self-method;
+  -ms-align-self: @align-self-method;
+  -o-align-self: @align-self-method;
+  align-self: @align-self-method;
 }
 
 // for auto, center, baseline, and stretch, which are the same in both specs
-.align-self(@align-self-method) when 
-                                (@align-self-method = auto), 
-                                (@align-self-method = center), 
-                                (@align-self-method = baseline), 
+.align-self(@align-self-method) when
+                                (@align-self-method = auto),
+                                (@align-self-method = center),
+                                (@align-self-method = baseline),
                                 (@align-self-method = stretch) {
 // tweener -ms- spec
   -ms-flex-item-align: @align-self-method;
@@ -416,24 +416,24 @@
 // center == center
 // stretch == stretch
 
-.align-content(@align-content-method) when (@align-content-method = start) {
+.align-content(@align-content-method) when (@align-content-method = flex-start) {
 // tweener -ms- spec
-  -ms-flex-line-pack: @align-content-method;
+  -ms-flex-line-pack: start;
 // 2013 spec
-  -webkit-align-content: flex-start;
-  -moz-align-content: flex-start;
-  -o-align-content: flex-start;
-  align-content: flex-start;
+  -webkit-align-content: @align-content-method;
+  -moz-align-content: @align-content-method;
+  -o-align-content: @align-content-method;
+  align-content: @align-content-method;
 }
 
-.align-content(@align-content-method) when (@align-content-method = end) {
+.align-content(@align-content-method) when (@align-content-method = flex-end) {
 // tweener -ms- spec
-  -ms-flex-line-pack: @align-content-method;
+  -ms-flex-line-pack: end;
 // 2013 spec
-  -webkit-align-content: flex-end;
-  -moz-align-content: flex-end;
-  -o-align-content: flex-end;
-  align-content: flex-end;
+  -webkit-align-content: @align-content-method;
+  -moz-align-content: @align-content-method;
+  -o-align-content: @align-content-method;
+  align-content: @align-content-method;
 }
 
 .align-content(@align-content-method) when (@align-content-method = space-between) {
@@ -457,7 +457,7 @@
 }
 
 .align-content(@align-content-method) when 
-                                  (@align-content-method = center), 
+                                  (@align-content-method = center),
                                   (@align-content-method = stretch) {
 // tweener -ms- spec
   -ms-flex-line-pack: @align-content-method;
@@ -485,38 +485,38 @@
 // space-around == distribute
 // 2009 spec does not support 'distribute' or 'space-around' property
 
-.justify-content(@justify-method) when (@justify-method = start) {
+.justify-content(@justify-method) when (@justify-method = flex-start) {
   //2009
-  -webkit-box-pack: @justify-method;
-  -moz-box-pack: @justify-method;
-  -ms-box-pack: @justify-method;
-  -o-box-pack: @justify-method;
-  box-pack: @justify-method;
-//tweener -ms-
-  -ms-flex-pack: @justify-method;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -ms-box-pack: start;
+  -o-box-pack: start;
+  box-pack: start;
+  //tweener -ms-
+  -ms-flex-pack: start;
 // current spec
-  -webkit-justify-content: flex-start;
-  -moz-justify-content: flex-start;
-  -ms-justify-content: flex-start;
-  -o-justify-content: flex-start;
-  justify-content: flex-start;
+  -webkit-justify-content: @justify-method;
+  -moz-justify-content: @justify-method;
+  -ms-justify-content: @justify-method;
+  -o-justify-content: @justify-method;
+  justify-content: @justify-method;
 }
 
-.justify-content(@justify-method) when (@justify-method = end) {
+.justify-content(@justify-method) when (@justify-method = flex-end) {
 // 2009 spec
-  -webkit-box-pack: @justify-method;
-  -moz-box-pack: @justify-method;
-  -ms-box-pack: @justify-method;
-  -o-box-pack: @justify-method;
-  box-pack: @justify-method;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -ms-box-pack: end;
+  -o-box-pack: end;
+  box-pack: end;
 // tweener -ms- spec
-  -ms-flex-pack: @justify-method;
+  -ms-flex-pack: end;
 // 2013 spec
-  -webkit-justify-content: flex-end;
-  -moz-justify-content: flex-end;
-  -ms-justify-content: flex-end;
-  -o-justify-content: flex-end;
-  justify-content: flex-end;
+  -webkit-justify-content: @justify-method;
+  -moz-justify-content: @justify-method;
+  -ms-justify-content: @justify-method;
+  -o-justify-content: @justify-method;
+  justify-content: @justify-method;
 }
 
 .justify-content(@justify-method) when (@justify-method = center) {
@@ -540,11 +540,11 @@
 // tweener -ms- spec
   -ms-flex-pack: justify;
 // 2013 spec
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  -ms-justify-content: space-between;
-  -o-justify-content: space-between;
-  justify-content: space-between;
+  -webkit-justify-content: @justify-method;
+  -moz-justify-content: @justify-method;
+  -ms-justify-content: @justify-method;
+  -o-justify-content: @justify-method;
+  justify-content: @justify-method;
 }
 
 .justify-content(@justify-method) when (@justify-method = space-around) {
@@ -552,11 +552,11 @@
 // tweener -ms- spec
   -ms-flex-pack: distribute;
 // 2013 spec
-  -webkit-justify-content: space-around;
-  -moz-justify-content: space-around;
-  -ms-justify-content: space-around;
-  -o-justify-content: space-around;
-  justify-content: space-around;
+  -webkit-justify-content: @justify-method;
+  -moz-justify-content: @justify-method;
+  -ms-justify-content: @justify-method;
+  -o-justify-content: @justify-method;
+  justify-content: @justify-method;
 }
 
 // flex-grow //
