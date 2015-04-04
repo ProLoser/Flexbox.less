@@ -22,7 +22,7 @@
   display: -moz-inline-flex;
   display: -ms-inline-flex;
   display: -o-inline-flex;
-  display: -inline-flex;
+  display: inline-flex;
 }
 .ut_flex-2009_none {
   -webkit-box-flex: 0.0;
