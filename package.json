@@ -1,0 +1,17 @@
+{
+  "name": "flexbox.less",
+  "version": "1.0.0",
+  "description": "CSS Flexbox mixins for LESS that adds back-compatibility for the 2009 syntax",
+  "files": [
+    "LICENSE",
+    "flexbox.less"
+  ],
+  "homepage": "http://proloser.github.io/Flexbox.less/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ProLoser/Flexbox.less.git"
+  },
+  "main": "flexbox.less",
+  "author": "Dean Sofer",
+  "license": "WTFPL"
+}
