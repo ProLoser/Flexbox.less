@@ -47,17 +47,6 @@ as an example of how to accomplish this.
 At this time, I'm unaware of any problems that may arise from using both the old and new syntax side by side in this
 manner. If you find problems, feel free to open an issue, just be sure to **provide the browser version number.**
 
-## TODO List
-
-* align-content (pending)
-* align-items (pending)
-* align-self (pending)
-* flex-basis (pending)
-* flex-flow  (pending)
-* flex-grow (pending)
-* flex-shrink (pending)
-* justify-content (pending)
-
 ## License
 
 #### [WTFPL](http://www.wtfpl.net/about/)
