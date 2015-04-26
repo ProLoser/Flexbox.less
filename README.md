@@ -6,6 +6,13 @@ CSS Flexbox mixins for LESS that adds back-compatibility for the 2009 syntax
 All mixins use the **latest flexbox syntax** and merely add additional properties in the original syntax for you, 
 as well as browser prefixes.
 
+UPDATE
+======
+
+This functionality is currently built into [autoprefixer](https://github.com/postcss/autoprefixer) which is being actively maintained, shares the same philosophy, and is more streamlined. I recommend using that project instead.
+
+Thanks for your contributions and checking out the project!
+
 ## Demo
 
 Checkout this [demo page](http://proloser.github.com/Flexbox.less/demo.html) in different browsers.
