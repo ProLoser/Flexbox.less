@@ -4,6 +4,7 @@
   "description": "CSS Flexbox mixins for LESS that adds back-compatibility for the 2009 syntax",
   "files": [
     "LICENSE",
+    "DEPRECATED.md"
     "flexbox.less"
   ],
   "homepage": "http://proloser.github.io/Flexbox.less/",
